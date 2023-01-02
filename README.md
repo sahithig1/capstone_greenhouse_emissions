@@ -19,6 +19,26 @@ For our project, we will be using a machine learning regression model for predic
 We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
 
 ## Project Outline
+- Presentation: Content, Google Slides, Live Presentation
+- Github: Main Branch, README.md, Individual Branches
+- Machine Learning Model: Working code or their machine learning model
+  - Description of data preprocessing 
+  - Description of feature engineering and the feature selection, including the team's decision-making process 
+  - Description of how data was split into training and testing sets
+  - Explanation of model choice, including limitations and benefits
+  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+  - Description of how model was trained (or retrained, if they are using an existing model)
+  - Description and explanation of model’s confusion matrix, including final accuracy score 
+- Database: Present a final project with a fully integrated database
+  - Database stores static data for use during the project
+  - Database interfaces with the project in some format (e.g., scraping updates the database, or database connects to the model)
+  - Includes at least two tables (or collections, if using MongoDB)
+  - Includes at least one join using the database language (not including any joins in Pandas) 
+  - Includes at least one connection string (using SQLAlchemy or PyMongo)
+- Dashboard: 
+  - Images from the initial analysis
+  - Data (images or report) from the machine learning task
+  - At least one interactive element
 
 ## Resources
 - Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>
@@ -26,9 +46,9 @@ We are utilizing our Slack group project channel to relay information to each ot
 - Library: WBGAPI
 - Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
 
-## Pending Results
+## *Pending* Results
 
-## Link to the Dashboard
+## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/elaine.bermudez/viz/NYC_Bikesharing_201908_16686538901570/Story1">link to dashboard</a>
 
-## Pending Summary
+## *Pending* Summary
