@@ -51,4 +51,4 @@ We are utilizing our Slack group project channel to relay information to each ot
 ## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/elaine.bermudez/viz/NYC_Bikesharing_201908_16686538901570/Story1">link to dashboard</a>
 
-## *Pending* Summary
+## *Pending* Summary and Recommendations
