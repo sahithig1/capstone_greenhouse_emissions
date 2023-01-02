@@ -1,6 +1,19 @@
-# Working Title: The Effect of Greenhouse Emmissions
+# Working Title: Predicting and Analyzing Greenhouse Gas Emmissions
 
 ## Project Overview
+The damage caused by climate change over this past year was at times so immense it was hard to comprehend. In Pakistan alone, extreme summer flooding killed thousands, displaced millions and caused over $40 billion in losses. Fall floods in Nigeria killed hundreds and displaced over 1 million people. Droughts in Europe, China and the U.S. dried out once-unstoppable rivers and slowed the flows of commerce on major arteries like the Mississippi and the Rhine.
+
+As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
+
+This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
+
+For our project, we will be using a machine learning regression model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
+- Per capita: how much CO2 does the average person emit?
+- What are the countries’ annual CO2 emissions?
+- Year-on-year change: what is the percentage change in CO2 emissions?
+- Cumulative: how much CO2 has it produced to date?
+- What share of global CO2 emissions are emitted by the country?
+- Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
 
 ## Communication protocols
 
@@ -8,8 +21,9 @@
 
 ## Resources
 - Data Source:
-- Software:
-- Library:
+- Software: Python, Tableau Public, 
+- Library: WBGAPI
+- Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
 
 ## Pending Results
 
