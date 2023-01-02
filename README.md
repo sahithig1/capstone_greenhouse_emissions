@@ -16,6 +16,7 @@ For our project, we will be using a machine learning regression model for predic
 - Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
 
 ## Communication protocols
+We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
 
 ## Project Outline
 
