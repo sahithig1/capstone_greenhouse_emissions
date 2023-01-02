@@ -19,7 +19,7 @@ For our project, we will be utilizing the Climate Change Data from the World Ban
 We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
 
 ## Project Outline
-- Presentation: 
+- <b>Presentation: </b>
   - Content 
     - Selected topic
     - Reason why they selected their topic
@@ -38,7 +38,7 @@ We are utilizing our Slack group project channel to relay information to each ot
     - The team demonstrates interactivity of dashboard in real time 
     - The presentation falls within any time limits provided by instructor 
     - Submission includes speaker notes, flashcards, or a video of the presentation rehearsal
-- Github:
+- <b>Github:</b>
   - Main Branch
     - All code necessary to perform exploratory analysis
     - All code necessary to complete machine learning portion of project 
@@ -51,7 +51,7 @@ We are utilizing our Slack group project channel to relay information to each ot
   - Individual Branches
     - At least one branch for each team member
     - Each team member has at least four commits for the duration of the final segment (16 total commits per person)
-- Machine Learning Model: Working code or their machine learning model
+- <b>Machine Learning Model: Working code or their machine learning model</b>
   - Description of data preprocessing 
   - Description of feature engineering and the feature selection, including the team's decision-making process 
   - Description of how data was split into training and testing sets
@@ -59,13 +59,13 @@ We are utilizing our Slack group project channel to relay information to each ot
   - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
   - Description of how model was trained (or retrained, if they are using an existing model)
   - Description and explanation of model’s confusion matrix, including final accuracy score 
-- Database: Present a final project with a fully integrated database
+- <b>Database: Present a final project with a fully integrated database</b>
   - Database stores static data for use during the project
   - Database interfaces with the project in some format (e.g., scraping updates the database, or database connects to the model)
   - Includes at least two tables (or collections, if using MongoDB)
   - Includes at least one join using the database language (not including any joins in Pandas) 
   - Includes at least one connection string (using SQLAlchemy or PyMongo)
-- Dashboard: 
+- <b>Dashboard: </b>
   - Images from the initial analysis
   - Data (images or report) from the machine learning task
   - At least one interactive element
