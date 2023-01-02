@@ -1,2 +1,16 @@
-# capstone_greenhouse_emissions
-Capstone project for the Data Visualization Course.
+# Working Title: The Effect of Greenhouse Emmissions
+
+## Project Overview
+
+## Communication protocols
+
+## Project Outline
+
+## Resources
+- Data Source:
+- Software:
+- Library:
+
+## Pending Results
+
+## Pending Summary
