@@ -19,8 +19,38 @@ For our project, we will be utilizing the Climate Change Data from the World Ban
 We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
 
 ## Project Outline
-- Presentation: Content, Google Slides, Live Presentation
-- Github: Main Branch, README.md, Individual Branches
+- Presentation: 
+  - Content 
+    - Selected topic
+    - Reason why they selected their topic
+    - Description of their source of data
+    - Questions they hope to answer with the data
+    - Description of the data exploration phase of the project
+    - Description of the analysis phase of the project
+    - Technologies, languages, tools, and algorithms used throughout the project 
+    - Result of analysis
+    - Recommendation for future analysis
+    - Anything the team would have done differently
+  - Google Slides: 
+    - Presentations are finalized in Google Slides
+  - Live Presentation
+    - All team members present in equal proportions 
+    - The team demonstrates interactivity of dashboard in real time 
+    - The presentation falls within any time limits provided by instructor 
+    - Submission includes speaker notes, flashcards, or a video of the presentation rehearsal
+- Github:
+  - Main Branch
+    - All code necessary to perform exploratory analysis
+    - All code necessary to complete machine learning portion of project 
+    - Any images that have been created (at least three)
+    - Requirements.txt file
+  - README.md
+    - Cohesive, structured outline of the project (this may include images, but should be easy to follow and digest)
+    - Link to dashboard (or link to video of dashboard demo)
+    - Link to Google Slides presentation
+  - Individual Branches
+    - At least one branch for each team member
+    - Each team member has at least four commits for the duration of the final segment (16 total commits per person)
 - Machine Learning Model: Working code or their machine learning model
   - Description of data preprocessing 
   - Description of feature engineering and the feature selection, including the team's decision-making process 
@@ -50,5 +80,8 @@ We are utilizing our Slack group project channel to relay information to each ot
 
 ## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/elaine.bermudez/viz/NYC_Bikesharing_201908_16686538901570/Story1">link to dashboard</a>
+
+## *Pending* Link to the Presentation
+[link to Google Slides Presentation] <a href="">link to presentation</a>
 
 ## *Pending* Summary and Recommendations
