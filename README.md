@@ -7,13 +7,16 @@ As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthrou
 
 This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
 
-For our project, we will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning regression model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
+For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
 - Per capita: how much CO2 does the average person emit?
 - What are the countries’ annual CO2 emissions?
 - Year-on-year change: what is the percentage change in CO2 emissions?
 - Cumulative: how much CO2 has it produced to date?
 - What share of global CO2 emissions are emitted by the country?
 - Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
+- Does energy used to sustain a person in a country have an effect on CO2 emissions? 
+- How does GDP influence Co2 emissions? 
+- How does Urban population in a country affect CO2 emissions?
 
 ## Communication protocols
 We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
@@ -79,7 +82,7 @@ We are utilizing our Slack group project channel to relay information to each ot
 ## *Pending* Results
 
 ## *Pending* Link to the Dashboard
-[link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/elaine.bermudez/viz/NYC_Bikesharing_201908_16686538901570/Story1">link to dashboard</a>
+[link to Tableau dashboard] <a href="">link to dashboard</a>
 
 ## *Pending* Link to the Presentation
 [link to Google Slides Presentation] <a href="">link to presentation</a>
