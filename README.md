@@ -76,7 +76,59 @@ We are utilizing our Slack group project channel to relay information to each ot
 - Library: WBGAPI
 - Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
 
-## *Pending* Results
+##  Results
+### Data Collection  
+We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. 
+
+### Data Cleaning and Analysis
+Pandas is used to clean the data and perform an exploratory analysis.
+
+### Database Storage
+Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
+
+The ERD diagram is shown below,
+![](images/api_data_ERD.png?raw=true)
+
+* Database stores static data for use during the project.
+![](images/ghg_emissions_sample_data.png?raw=true)
+
+* Database interfaces with the project in some format (database connects to the model)
+![](images/MLconnected_db.png?raw=true)
+
+### Data Extraction:
+
+- Datasets from [Climate TRACE](https://climatetrace.org/) are downloaded. After exploring the data, this dataset is not considered due to lack of dependent features that can address the project's outcome.
+- Later, World Bank climate change data is downloaded to train the model. Though, there are several ways to retrieve the dataset, Python's wbgapi API is used due to the ease of data retrieval and availability of current data.
+
+### Data Cleaning
+
+- Basic cleaning is done on the dataset to remove empty values.
+- The data is then loaded into a local PostGres database.
+
+### Emissions Model Creation:
+
+- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
+<img src="images/emissions_df.png" width="300"/>
+
+- With 19 columns to explore, the variables involved are classified as dependent and independent variables.
+- Dependent Variables
+  - emissions_total
+  - emissions_per_capita
+  - emissions_per_gdp
+- Variables to drop: year, country_name, country_code
+- The rest are considered as independent variables.
+
+### Exploratory Data Analysis
+
+- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
+- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
+- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
+- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
+- Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
+
+- How are you training your model?
+- What is the model's accuracy?
+- How does this model work?
 
 ## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/elaine.bermudez/viz/NYC_Bikesharing_201908_16686538901570/Story1">link to dashboard</a>
