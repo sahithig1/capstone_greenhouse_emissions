@@ -282,4 +282,4 @@ The ERD diagram is shown below,
 ## *Pending* Link to the Presentation
 [link to Google Slides Presentation] <a href="">link to presentation</a>
 
-## *Pending* Summary and Recommendations
+## *Pending* Summary and Recommendation
