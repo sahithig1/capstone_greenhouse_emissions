@@ -21,72 +21,38 @@ For our project, we have an investor that would like to tap into the climate spe
 ## Communication protocols
 We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
 
-## Project Outline
+## Project Outline: Segment 1
 - <b>Presentation: </b>
   - Content 
-    - Selected topic
-    - Reason why they selected their topic
-    - Description of their source of data
-    - Questions they hope to answer with the data
-    - Description of the data exploration phase of the project
-    - Description of the analysis phase of the project
-    - Technologies, languages, tools, and algorithms used throughout the project 
-    - Result of analysis
-    - Recommendation for future analysis
-    - Anything the team would have done differently
-  - Google Slides: 
-    - Presentations are finalized in Google Slides
-  - Live Presentation
-    - All team members present in equal proportions 
-    - The team demonstrates interactivity of dashboard in real time 
-    - The presentation falls within any time limits provided by instructor 
-    - Submission includes speaker notes, flashcards, or a video of the presentation rehearsal
 - <b>Github:</b>
   - Main Branch
-    - All code necessary to perform exploratory analysis
-    - All code necessary to complete machine learning portion of project 
-    - Any images that have been created (at least three)
-    - Requirements.txt file
   - README.md
-    - Cohesive, structured outline of the project (this may include images, but should be easy to follow and digest)
-    - Link to dashboard (or link to video of dashboard demo)
-    - Link to Google Slides presentation
   - Individual Branches
-    - At least one branch for each team member
-    - Each team member has at least four commits for the duration of the final segment (16 total commits per person)
-- <b>Machine Learning Model: Working code or their machine learning model</b>
-  - Description of data preprocessing 
-  - Description of feature engineering and the feature selection, including the team's decision-making process 
-  - Description of how data was split into training and testing sets
-  - Explanation of model choice, including limitations and benefits
-  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-  - Description of how model was trained (or retrained, if they are using an existing model)
-  - Description and explanation of model’s confusion matrix, including final accuracy score 
-- <b>Database: Present a final project with a fully integrated database</b>
-  - Database stores static data for use during the project
-  - Database interfaces with the project in some format (e.g., scraping updates the database, or database connects to the model)
-  - Includes at least two tables (or collections, if using MongoDB)
-  - Includes at least one join using the database language (not including any joins in Pandas) 
-  - Includes at least one connection string (using SQLAlchemy or PyMongo)
-- <b>Dashboard: </b>
-  - Images from the initial analysis
-  - Data (images or report) from the machine learning task
-  - At least one interactive element
+- <b>Machine Learning Model:</b>
+  - Takes in data to a database
+  - Outputs labels for input data
+- <b>Database:</b>
+  - Sample database
+  - ERD
 
 ## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>
+- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv">countries.csv</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv">ghg_emissions.csv</a>
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
-- Library: WBGAPI
+- Library: WBGAPI, Pandas, Numpy
 - Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
 
 ##  Results
-### Data Collection  
+### Database
+#### Data Collection  
 We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. 
 
-### Data Cleaning and Analysis
-Pandas is used to clean the data and perform an exploratory analysis.
+#### Data Cleaning and Analysis
+- Pandas is used to clean the data and perform an exploratory analysis.
+- Basic cleaning is done on the dataset to remove empty values.
+- The data is then loaded into a local PostGres database.
 
-### Database Storage
+
+#### Database Storage
 Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
 
 The ERD diagram is shown below,
@@ -99,17 +65,13 @@ The ERD diagram is shown below,
 * Database interfaces with the project in some format (database connects to the model)
 ![](images/MLconnected_db.png?raw=true)
 
-### Data Extraction:
+#### Data Extraction:
 
 - Datasets from [Climate TRACE](https://climatetrace.org/) are downloaded. After exploring the data, this dataset is not considered due to lack of dependent features that can address the project's outcome.
 - Later, World Bank climate change data is downloaded to train the model. Though, there are several ways to retrieve the dataset, Python's wbgapi API is used due to the ease of data retrieval and availability of current data.
 
-### Data Cleaning
-
-- Basic cleaning is done on the dataset to remove empty values.
-- The data is then loaded into a local PostGres database.
-
-### Emissions Model Creation:
+### Machine Learning
+#### Emissions Model Creation:
 
 - The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
 <img src="images/emissions_df.png" width="300"/>
@@ -122,22 +84,16 @@ The ERD diagram is shown below,
 - Variables to drop: year, country_name, country_code
 - The rest are considered as independent variables.
 
-### Exploratory Data Analysis
-
-- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
-- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
-- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
-
-- How are you training your model?
-- What is the model's accuracy?
-- How does this model work?
-
 ## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="">link to dashboard</a>
 
 ## *Pending* Link to the Presentation
 [link to Google Slides Presentation] <a href="">link to presentation</a>
 
-## *Pending* Summary and Recommendations
+## Summary and Recommendations
+### Exploratory Data Analysis Summary
+- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
+- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
+- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
+- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
+- Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
