@@ -74,7 +74,7 @@ We are utilizing our Slack group project channel to relay information to each ot
   - At least one interactive element
 
 ## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>
+- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
 - Library: WBGAPI
 - Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
@@ -90,7 +90,8 @@ Pandas is used to clean the data and perform an exploratory analysis.
 Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
 
 The ERD diagram is shown below,
-![](images/api_data_ERD.png?raw=true)
+
+ ![](images/ERD.png?raw=true)
 
 * Database stores static data for use during the project.
 ![](images/ghg_emissions_sample_data.png?raw=true)
