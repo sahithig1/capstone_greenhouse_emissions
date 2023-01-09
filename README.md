@@ -1,8 +1,6 @@
 # Working Title: Predicting and Analyzing Greenhouse Gas Emmissions
 
 ## Project Overview
-The damage caused by climate change over this past year was at times so immense it was hard to comprehend. In Pakistan alone, extreme summer flooding killed thousands, displaced millions and caused over $40 billion in losses. Fall floods in Nigeria killed hundreds and displaced over 1 million people. Droughts in Europe, China and the U.S. dried out once-unstoppable rivers and slowed the flows of commerce on major arteries like the Mississippi and the Rhine.
-
 As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
 
 This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
@@ -36,7 +34,7 @@ We are utilizing our Slack group project channel to relay information to each ot
   - ERD
 
 ## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv">countries.csv</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv">ghg_emissions.csv</a>
+- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>, <a href="https://www.epa.gov/system/files/other-files/2022-10/emissions_by_unit_and_fuel_type_c_d_aa_10_2022.zip">Emissions by Unit and Fuel Type|US EPA</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv">countries.csv</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv">ghg_emissions.csv</a>
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
 - Library: WBGAPI, Pandas, Numpy
 - Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
@@ -84,11 +82,12 @@ The ERD diagram is shown below,
 - Variables to drop: year, country_name, country_code
 - The rest are considered as independent variables.
 
-## *Pending* Link to the Dashboard
-[link to Tableau dashboard] <a href="">link to dashboard</a>
+## Link to the Dashboard
+[Link to the Google Slides Blueprint] <a href="https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000">link to blueprint</a>
+[link to Tableau dashboard] <a href="">*pending* link to dashboard</a>
 
-## *Pending* Link to the Presentation
-[link to Google Slides Presentation] <a href="">link to presentation</a>
+## Link to the Presentation
+[link to Google Slides Presentation] <a href="https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000">link to presentation</a>
 
 ## Summary and Recommendations
 ### Exploratory Data Analysis Summary
