@@ -17,27 +17,40 @@ For our project, we have an investor that would like to tap into the climate spe
 - How does Urban population in a country affect CO2 emissions?
 
 ## Communication protocols
-We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
+We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 2 times a week to collaborate and ensure we are answering each others' questions. 
 
-## Project Outline: Segment 1
+## Project Outline: Segment 2
 - <b>Presentation: </b>
   - Content 
+  - Google Slides
 - <b>Github:</b>
   - Main Branch
   - README.md
   - Individual Branches
 - <b>Machine Learning Model:</b>
-  - Takes in data to a database
-  - Outputs labels for input data
+  - Preliminary data preprocessing 
+  - Preliminary feature engineering
+  - Preliminary feature selection
+  - Decision-making process 
+  - How data was split into training and testing sets
+  - Model choice, including limitations and benefits
 - <b>Database:</b>
-  - Sample database
+  - Database stores static data for use during the project
+  - database connects to the model
+  - Includes at least two tables
+  - Includes at least one join using the database language
+  - Includes at least one connection string
   - ERD
+- <b>Dashboard:</b>
+  - Storyboard on Google Slides
+  - Tools that will be used to create final dashboard 
+  - Interactive elements 
 
 ## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>, <a href="https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1">Climate Watch</a>, <a href="https://www.epa.gov/system/files/other-files/2022-10/emissions_by_unit_and_fuel_type_c_d_aa_10_2022.zip">Emissions by Unit and Fuel Type|US EPA</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv">countries.csv</a>, <a href="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv">ghg_emissions.csv</a>
+- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv)
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
 - Library: WBGAPI, Pandas, Numpy
-- Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
+- Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html) and [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
 ### Database
@@ -55,13 +68,13 @@ Postgres(SQL) is the database we intend to use, and the structure of the databas
 
 The ERD diagram is shown below,
 
- ![](images/ERD.png?raw=true)
+![ERD diagram](images/ERD.png?raw=true)
 
 * Database stores static data for use during the project.
-![](images/ghg_emissions_sample_data.png?raw=true)
+![Database stores static data](images/ghg_emissions_sample_data.png?raw=true)
 
 * Database interfaces with the project in some format (database connects to the model)
-![](images/MLconnected_db.png?raw=true)
+![ML connected](images/MLconnected_db.png?raw=true)
 
 #### Data Extraction:
 
@@ -84,7 +97,27 @@ The ERD diagram is shown below,
 
 ## Link to the Dashboard
 [Link to the Google Slides Blueprint] <a href="https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000">link to blueprint</a>
-[link to Tableau dashboard] <a href="">*pending* link to dashboard</a>
+
+[link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/soumya.abraham"> link to dashboard</a>
+
+For our dashboard visualizations, we have primarily opted for Tableau Public.
+After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
+- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive stufy of the charts provided. 
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+
+In the Google Slides Blueprint, you will find the following:
+- Description of the tools used for the final dashboard
+- Description of the interactive element
+- Analysis for the visualizations
+- Next steps to take for Segment 3
+- Future visualization ideas and recommendations for improving current visualization
+
+Examples of visualization for the dashboard include the following:
+![Emissions per GDP vs CO2 Emission]()
+![Emissions per Capita]()
+![Energy consumption per Capita vs Emissions]()
+
+
 
 ## Link to the Presentation
 [link to Google Slides Presentation] <a href="https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000">link to presentation</a>
