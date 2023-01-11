@@ -50,7 +50,7 @@ We are utilizing our Slack group project channel to relay information to each ot
 - Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv)
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
 - Library: WBGAPI, Pandas, Numpy
-- Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html) and [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
+- Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
 ### Database
@@ -71,7 +71,8 @@ The ERD diagram is shown below,
 ![ERD diagram](images/ERD.png?raw=true)
 
 * Database stores static data for use during the project.
-![Database stores static data](images/ghg_emissions_sample_data.png?raw=true)
+![ghg_emissions](images/ghg_emissions_sample_data.png?raw=true)
+![sector_emissions](images/sector_emissions_sample_data.png?raw=true)
 
 * Database interfaces with the project in some format (database connects to the model)
 ![ML connected](images/MLconnected_db.png?raw=true)
@@ -95,15 +96,25 @@ The ERD diagram is shown below,
 - Variables to drop: year, country_name, country_code
 - The rest are considered as independent variables.
 
-## Link to the Dashboard
-[Link to the Google Slides Blueprint] <a href="https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000">link to blueprint</a>
+<img src="images/filter_shape.png" width="300"/>
 
-[link to Tableau dashboard] <a href="https://public.tableau.com/app/profile/soumya.abraham"> link to dashboard</a>
+<img src="images/emissions_shape.png" width="300"/>
+
+<img src="images/missing_values.png" width="300"/>
+
+<img src="images/raw_shape.png" width="300"/>
+
+## Link to the Dashboard
+[Link to the Google Slides Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+
+[Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
 
 For our dashboard visualizations, we have primarily opted for Tableau Public.
 After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
 - We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive stufy of the charts provided. 
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+
+![Dashboard Actions]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
 
 In the Google Slides Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
@@ -112,15 +123,18 @@ In the Google Slides Blueprint, you will find the following:
 - Next steps to take for Segment 3
 - Future visualization ideas and recommendations for improving current visualization
 
-Examples of visualization for the dashboard include the following:
-![Emissions per GDP vs CO2 Emission]()
-![Emissions per Capita]()
-![Energy consumption per Capita vs Emissions]()
+In the Tableau dashboard, you will find initial visualizations. Examples of visualization include the following:
+
+![Emissions per GDP vs CO2 Emission]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
+
+![Emissions per Capita]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
+
+![Energy consumption per Capita vs Emissions]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
 
 
 
 ## Link to the Presentation
-[link to Google Slides Presentation] <a href="https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000">link to presentation</a>
+[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
 
 ## Summary and Recommendations
 ### Exploratory Data Analysis Summary
