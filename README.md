@@ -1,4 +1,4 @@
-# Working Title: Predicting and Analyzing Greenhouse Gas Emmissions
+# Working Title: Predicting and Analyzing Greenhouse Gas Emissions
 
 ## Project Overview
 As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
@@ -74,45 +74,32 @@ The ERD diagram is shown below,
 
 Data Extraction:
 - The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
-<img src=“images/raw_shape.png” width=“300"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/raw_shape.png” width=“300"/>
 
 ### Machine Learning
-#### Emissions Model Creation:
-
-- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
-<img src="images/emissions_df.png" width="300"/>
-
-- With 19 columns to explore, the variables involved are classified as dependent and independent variables.
-- Dependent Variables
-  - emissions_total
-  - emissions_per_capita
-  - emissions_per_gdp
-- Variables to drop: year, country_name, country_code
-- The rest are considered as independent variables.
-
 #### Data preprocessing
 - Unnecessary columns (like country)are dropped from the retrieved data.
 - After ensuring there are no duplicates, the column headers of the dataset are renamed.
 - Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
-<img src=“images/filter_shape.png” width=“300"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/filter_shape.png” width=“300"/>
 - The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
-<img src=“images/missing_values.png” width=“300"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/missing_values.png” width=“300"/>
 - Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
 - Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
 - The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
-<img src=“images/emissions_shape.png” width=“300"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/emissions_shape.png” width=“300"/>
 - The model reads data from the database into a Pandas data frame.
 - The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
 - The dataset has three dependent	variables that predict emissions.
 - Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
 - The data is then checked for skewness and the distribution of data is visualized.
-<img src=“images/viz1.png” width=“400"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/viz1.png” width=“400"/>
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
-<img src=“images/log1.png” width=“400"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/log1.png” width=“400"/>
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
 - The Label and features are then determined.
-<img src=“images/sel2.png” width=“400"/>
+<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel2.png” width=“400"/>
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
 
@@ -123,7 +110,7 @@ Data Extraction:
 
 For our dashboard visualizations, we have primarily opted for Tableau Public.
 After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
-- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive stufy of the charts provided. 
+- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided. 
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
 
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
