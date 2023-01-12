@@ -77,39 +77,32 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 Data Extraction:
 - The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/raw_shape.png” width=“300"/>
+![](images/raw_shape.png?raw=true)
 
 ### Machine Learning
 #### Data preprocessing
 - Unnecessary columns (like country)are dropped from the retrieved data.
 - After ensuring there are no duplicates, the column headers of the dataset are renamed.
 - Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/filter_shape.png” width=“300"/>
+![](images/filter_shape.png?raw=true)
 - The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/missing_values.png” width=“300"/>
+![](images/missing_values.png?raw=true)
 - Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
 - Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
 - The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/emissions_shape.png” width=“300"/>
+![](images/emissions_shape.png?raw=true)
 - The model reads data from the database into a Pandas data frame.
 - The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
 - The dataset has three dependent	variables that predict emissions.
 - Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
 - The data is then checked for skewness and the distribution of data is visualized.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/viz1.png” width=“400"/>
+![](images/viz1.png?raw=true)
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/log1.png” width=“400"/>
+![](images/log1.png?raw=true)
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
 - The Label and features are then determined.
-
-<img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel2.png” width=“400"/>
+![](images/sel2.png?raw=true)
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
 
