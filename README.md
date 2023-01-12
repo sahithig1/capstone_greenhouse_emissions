@@ -62,16 +62,19 @@ The ERD diagram is shown below,
 ![ERD diagram](images/ERD.png?raw=true)
 
 * Database stores static data for use during the project.
-![ghg_emissions](images/ghg_emissions_sample_data.png?raw=true)
-![sector_emissions](images/sector_emissions_sample_data.png?raw=true)
+![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
+![sector_emissions](images/sector_emissions_sample.png?raw=true)
+![sector_emissions](images/sql_join_ghg_emissions.png?raw=true)
+![sector_emissions](images/sql_join_sector_emissions.png?raw=true)
 
 * Database interfaces with the project in some format (database connects to the model)
 ![ML connected](images/MLconnected_db.png?raw=true)
 
 #### Data Extraction:
 
-- Datasets from [Climate TRACE](https://climatetrace.org/) are downloaded. After exploring the data, this dataset is not considered due to lack of dependent features that can address the project's outcome.
-- Later, World Bank climate change data is downloaded to train the model. Though, there are several ways to retrieve the dataset, Python's wbgapi API is used due to the ease of data retrieval and availability of current data.
+Data Extraction:
+- The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
+<img src=“images/raw_shape.png” width=“300"/>
 
 ### Machine Learning
 #### Emissions Model Creation:
@@ -87,28 +90,34 @@ The ERD diagram is shown below,
 - Variables to drop: year, country_name, country_code
 - The rest are considered as independent variables.
 
-<img src="images/filter_shape.png" width="300"/>
-
-<img src="images/emissions_shape.png" width="300"/>
-
-<img src="images/missing_values.png" width="300"/>
-
-<img src="images/raw_shape.png" width="300"/>
-
-#### Preliminary data preprocessing
-
-#### Preliminary feature engineering
-
-#### Preliminary feature selection
-
-#### Decision-making process
-
-#### How data was split into training and testing sets
-
-#### Model choice, including limitations and benefits
+#### Data preprocessing
+- Unnecessary columns (like country)are dropped from the retrieved data.
+- After ensuring there are no duplicates, the column headers of the dataset are renamed.
+- Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
+<img src=“images/filter_shape.png” width=“300"/>
+- The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
+<img src=“images/missing_values.png” width=“300"/>
+- Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
+- Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
+- The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
+<img src=“images/emissions_shape.png” width=“300"/>
+- The model reads data from the database into a Pandas data frame.
+- The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
+- The dataset has three dependent	variables that predict emissions.
+- Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
+- The data is then checked for skewness and the distribution of data is visualized.
+<img src=“images/viz1.png” width=“400"/>
+- As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
+<img src=“images/log1.png” width=“400"/>
+- It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
+- Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
+- The Label and features are then determined.
+<img src=“images/sel2.png” width=“400"/>
+- The training and testing data are split in 80:20 ratio.
+- The DecisionTreeRegressor seems to handle skewness of data better.
 
 ## Link to the Dashboard
-[Link to the Google Slides Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+[Link to the Google Slides Dashboard Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
 
 [Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
 
@@ -117,9 +126,9 @@ After bringing in our csv files, we chose various forms of graphs and maps to sh
 - We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive stufy of the charts provided. 
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
 
-![Dashboard Actions]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
 
-In the Google Slides Blueprint, you will find the following:
+In the Google Slides Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
 - Description of the interactive element
 - Analysis for the visualizations
@@ -128,13 +137,11 @@ In the Google Slides Blueprint, you will find the following:
 
 In the Tableau dashboard, you will find initial visualizations. Examples of visualization include the following:
 
-![Emissions per GDP vs CO2 Emission]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
 
-![Emissions per Capita]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
 
-![Energy consumption per Capita vs Emissions]<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
-
-
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
 
 ## Link to the Presentation
 [link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
