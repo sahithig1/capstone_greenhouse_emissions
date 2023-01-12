@@ -102,6 +102,7 @@ Data Extraction:
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
 - The Label and features are then determined.
+![](images/sel1.png?raw=true)
 ![](images/sel2.png?raw=true)
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
