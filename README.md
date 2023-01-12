@@ -36,7 +36,7 @@ We are utilizing our Slack group project channel to relay information to each ot
   - Model choice, including limitations and benefits
 - <b>Database:</b>
   - Database stores static data for use during the project
-  - database connects to the model
+  - Database connects to the model
   - Includes at least two tables
   - Includes at least one join using the database language
   - Includes at least one connection string
@@ -54,17 +54,8 @@ We are utilizing our Slack group project channel to relay information to each ot
 
 ##  Results
 ### Database
-#### Data Collection  
-We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. 
-
-#### Data Cleaning and Analysis
-- Pandas is used to clean the data and perform an exploratory analysis.
-- Basic cleaning is done on the dataset to remove empty values.
-- The data is then loaded into a local PostGres database.
-
-
 #### Database Storage
-Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
+We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. The data is then loaded into a local PostGres database. Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
 
 The ERD diagram is shown below,
 
@@ -103,6 +94,18 @@ The ERD diagram is shown below,
 <img src="images/missing_values.png" width="300"/>
 
 <img src="images/raw_shape.png" width="300"/>
+
+#### Preliminary data preprocessing
+
+#### Preliminary feature engineering
+
+#### Preliminary feature selection
+
+#### Decision-making process
+
+#### How data was split into training and testing sets
+
+#### Model choice, including limitations and benefits
 
 ## Link to the Dashboard
 [Link to the Google Slides Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
