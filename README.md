@@ -54,26 +54,30 @@ We are utilizing our Slack group project channel to relay information to each ot
 
 ##  Results
 ### Database
-#### Database Storage
 We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. The data is then loaded into a local PostGres database. Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
 
-The ERD diagram is shown below,
+#### The ERD diagram is shown below,
 
 ![ERD diagram](images/ERD.png?raw=true)
 
-* Database stores static data for use during the project.
+#### Database stores static data for use during the project.
+
 ![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
 ![sector_emissions](images/sector_emissions_sample.png?raw=true)
-![sector_emissions](images/sql_join_ghg_emissions.png?raw=true)
-![sector_emissions](images/sql_join_sector_emissions.png?raw=true)
 
-* Database interfaces with the project in some format (database connects to the model)
+#### Join using the database language
+
+![sql_join_ghg_emissions](images/sql_join_ghg_emissions.png?raw=true)
+![sql_join_sector_emissions](images/sql_join_sector_emissions.png?raw=true)
+
+#### Database interfaces with the project in some format (database connects to the model)
 ![ML connected](images/MLconnected_db.png?raw=true)
 
 #### Data Extraction:
 
 Data Extraction:
 - The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/raw_shape.png” width=“300"/>
 
 ### Machine Learning
@@ -81,24 +85,30 @@ Data Extraction:
 - Unnecessary columns (like country)are dropped from the retrieved data.
 - After ensuring there are no duplicates, the column headers of the dataset are renamed.
 - Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/filter_shape.png” width=“300"/>
 - The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/missing_values.png” width=“300"/>
 - Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
 - Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
 - The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/emissions_shape.png” width=“300"/>
 - The model reads data from the database into a Pandas data frame.
 - The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
 - The dataset has three dependent	variables that predict emissions.
 - Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
 - The data is then checked for skewness and the distribution of data is visualized.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/viz1.png” width=“400"/>
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/log1.png” width=“400"/>
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
 - The Label and features are then determined.
+
 <img src=“https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel2.png” width=“400"/>
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
