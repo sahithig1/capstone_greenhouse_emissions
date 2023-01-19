@@ -44,7 +44,7 @@ For our project, we have an investor that would like to tap into the climate spe
 
 ## Resources
 - Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv] (https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
-- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, MongoDB, Flask
+- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, PostgreSQL, Flask 1.1.2, HTML5, CSS, Bootstrap 3.3.7, D3, Plotly 5.9.0
 - Library: Pandas, Matplotlib, Numpy, Seaborn, WBGAPI
 - Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
@@ -168,5 +168,5 @@ As the first step to our analysis, we can assume that Texas and Louisiana are hi
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
 #### Future visualization and improvement: 
+- Work on visuals which can suggest possible US cities and sectors for investment.
 
-- Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
