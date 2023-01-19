@@ -76,45 +76,58 @@ For our project, we have an investor that would like to tap into the climate spe
 ![](images/sel2.png?raw=true)
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
+- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
+- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
+- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
+- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
+- Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
 #### Current Accuracy Score
 
 
 ## Link to the Dashboard
 [*pending* Link to the Dashboard](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
 
-[Link to the Google Slides Dashboard Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
 [Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
 
-For our dashboard visualizations, we have primarily opted for Tableau Public.
-After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
-- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided. 
-- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+## Dashboard Analysis
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
-
-In the Google Slides Dashboard Blueprint, you will find the following:
+In the Excel Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
 - Description of the interactive element
 - Analysis for the visualizations
-- Next steps to take for Segment 3
 - Future visualization ideas and recommendations for improving current visualization
 
-In the Tableau dashboard, you will find initial visualizations. Examples of visualization include the following:
+#### Analysis 
+At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
+When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
+![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Statewise_Emissions_TX.png)
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
+We also notice the the Chemical sector is the highest contributing sector for CO2 emission in LA. 
+![LA1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Statewise_Emissions_LA.png)
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
+As the first step to our analysis, we can assume that Texas and Louisiana are high on our priority list of states needing assistance in cutting down their CO2 emissions, especially in the Chemicals sector.
+![TX2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Analysis_state_sector_TX.png)
+![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Analysis_state_sector_LA.png)
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
+We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
 ## Link to the Presentation
 [link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
 
-## Summary and Recommendations
-### Exploratory Data Analysis Summary
-- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
-- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
-- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
+## Summary and Recommendations for the Dashboard
+### Tableau
+- We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
+- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+![actions]()
+
+Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
+
+### Plotly:
+-
+### Machine Learning
+-
+
+
