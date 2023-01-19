@@ -6,20 +6,22 @@ As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthrou
 This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
 
 For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
-- Per capita: how much CO2 does the average person emit?
-- What are the countries’ annual CO2 emissions?
-- Year-on-year change: what is the percentage change in CO2 emissions?
-- Cumulative: how much CO2 has it produced to date?
-- What share of global CO2 emissions are emitted by the country?
-- Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
-- Does energy used to sustain a person in a country have an effect on CO2 emissions? 
-- How does GDP influence Co2 emissions? 
-- How does Urban population in a country affect CO2 emissions?
 
-## Communication protocols
-We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 2 times a week to collaborate and ensure we are answering each others' questions. 
+- General
+  - What countries have the largest CO2 greenhouse gas emissions (GHG)?
+  - What are the GHG emissions per country?
+- Machine Learning: 
+  - Can a machine learning model show that there is a correlation between factors that may influence CO2 emissions?
+- Factors influencing emissions: 
+  - How does CO2 emissions change year over year?
+  - How does GDP influence CO2 emissions? 
+  - How does population influence CO2 emissions? 
+- USA Data: 
+  - Which state and city has the most CO2 emissions?
+  - What sector generates the most CO2 emissions?
+  - What cities contribute to the CO2 emissions' sectors?
 
-## Project Outline: Segment 2
+## Project Outline: Segment 3
 - <b>Presentation: </b>
   - Content 
   - Google Slides
@@ -28,28 +30,22 @@ We are utilizing our Slack group project channel to relay information to each ot
   - README.md
   - Individual Branches
 - <b>Machine Learning Model:</b>
-  - Preliminary data preprocessing 
-  - Preliminary feature engineering
-  - Preliminary feature selection
-  - Decision-making process 
-  - How data was split into training and testing sets
-  - Model choice, including limitations and benefits
-- <b>Database:</b>
-  - Database stores static data for use during the project
-  - Database connects to the model
-  - Includes at least two tables
-  - Includes at least one join using the database language
-  - Includes at least one connection string
-  - ERD
+  - Description of data preprocessing  
+  - Description of feature engineering and the feature selection, including their decision-making process 
+  - Description of how data was split into training and testing sets
+  - Explanation of model choice, including limitations and benefits
+  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+  - Description of how they have trained the model thus far, and any additional training that will take place
+  - Description of current accuracy score   
 - <b>Dashboard:</b>
-  - Storyboard on Google Slides
-  - Tools that will be used to create final dashboard 
-  - Interactive elements 
+  - Images from the initial analysis
+  - Data (images or report) from the machine learning task
+  - At least one interactive element 
 
 ## Resources
-- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv)
-- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
-- Library: WBGAPI, Pandas, Numpy
+- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv] (https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
+- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, MongoDB, Flask
+- Library: Pandas, Matplotlib, Numpy, Seaborn, WBGAPI
 - Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
@@ -58,7 +54,7 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 #### The ERD diagram is shown below,
 
-![ERD diagram](images/ERD.png?raw=true)
+![ERD diagram](images/ERD_final.png?raw=true)
 
 #### Database stores static data for use during the project.
 
@@ -74,8 +70,6 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 ![ML connected](images/MLconnected_db.png?raw=true)
 
 #### Data Extraction:
-
-Data Extraction:
 - The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
 ![](images/raw_shape.png?raw=true)
 
@@ -100,47 +94,79 @@ Data Extraction:
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
 ![](images/log1.png?raw=true)
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
-- Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data.
+- Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data. My dominant features are the 
 - The Label and features are then determined.
 ![](images/sel1.png?raw=true)
 ![](images/sel2.png?raw=true)
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
-
-## Link to the Dashboard
-[Link to the Google Slides Dashboard Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
-
-[Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
-
-For our dashboard visualizations, we have primarily opted for Tableau Public.
-After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
-- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided. 
-- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
-
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
-
-In the Google Slides Dashboard Blueprint, you will find the following:
-- Description of the tools used for the final dashboard
-- Description of the interactive element
-- Analysis for the visualizations
-- Next steps to take for Segment 3
-- Future visualization ideas and recommendations for improving current visualization
-
-In the Tableau dashboard, you will find initial visualizations. Examples of visualization include the following:
-
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
-
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
-
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
-
-## Link to the Presentation
-[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
-
-## Summary and Recommendations
-### Exploratory Data Analysis Summary
 - Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
 - **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
 - A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
 - Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
 - Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
+
+#### Current Accuracy Score
+
+
+## Link to the Dashboard
+[Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
+
+[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
+
+## Dashboard
+In the Heroku Dashboard, you will find the following:
+- The web application has a header image and navigation bar with several tabs. Upon clicking the navigation links, the user is directed to visual analysis.
+- The Home tab gives an overview of Greenhouse Gases and their emissions with various visuals to help grasp concepts better.  
+- The Model will summarize the prediction of Machine Learning algorithms used in the project.
+- The Factors tab employs interactivity with radio buttons that allow selection of a factor that can influence emissions.
+- The USA tab dives into the CO2 emissions within the country. 
+	- We have a map on the left showcasing the CO2 emissions within each city and state. A dropdown filter allows you to choose specific cities the investor may be interested in. This can be useful when you want to declutter the map to provide emissions in specific state(s).
+	- The bar graph on the right shows the CO2 emissions per state, sorted in descending order. You will notice that Texas has the highest CO2 emissions of all. 
+	- A second bar graph is placed at the bottom of the page, where we can see the various sectors, each divided by state and city.
+If you click on the TX bar, you will notice only the cities in TX will be highlighted in the sector bar graph.
+
+In the Excel Dashboard Blueprint, you will find the following:
+- Description of the tools used for the final dashboard
+- Description of the interactive element
+- Analysis for the visualizations
+- Future visualization ideas and recommendations for improving current visualization
+
+## Link to the Presentation
+[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
+
+## Summary and Recommendations for the Dashboard
+### Workflow: 
+The cleaned data from the database is used to create visualizations. The dashboard is an interactive  web application which showcases seamless integration of Tableau and Plotly visuals.
+
+#### Tableau
+- After bringing in our CSV files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, population growth, fossil usage, etc. 
+- We also used various forms of filtering (by Year, Top 10 countries etc) to allow for a more comprehensive study of the charts provided. 
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+
+![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Creating%20actions.png)
+
+- Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
+
+#### Plotly:
+- HTML, CSS and Bootstrap are extensively used to build the layout of the dashboard page. 
+- The dashboard also houses plots built with Python's Plotly.
+- The Tableau visualizations are embedded into the web page using Tableau Embedding API. 
+
+#### Analysis 
+At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
+When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
+![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_TX.png)
+
+We also notice the the Chemical sector is the highest contributing sector for CO2 emission in LA. 
+![LA1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_LA.png)
+
+As the first step to our analysis, we can assume that Texas and Louisiana are high on our priority list of states needing assistance in cutting down their CO2 emissions, especially in the Chemicals sector.
+![TX2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_TX.png)
+![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_LA.png)
+
+We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
+
+#### Future visualization and improvement: 
+
+- Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
