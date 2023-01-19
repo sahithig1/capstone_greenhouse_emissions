@@ -76,9 +76,37 @@ For our project, we have an investor that would like to tap into the climate spe
 ![](images/sel2.png?raw=true)
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
+#### Current Accuracy Score
+
 
 ## Link to the Dashboard
-[Link to the Dashboard](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+[*pending* Link to the Dashboard](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+
+[Link to the Google Slides Dashboard Blueprint](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+
+[Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
+
+For our dashboard visualizations, we have primarily opted for Tableau Public.
+After bringing in our csv files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, emissions per GDP, population growth etc. 
+- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided. 
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png" width="600"/>
+
+In the Google Slides Dashboard Blueprint, you will find the following:
+- Description of the tools used for the final dashboard
+- Description of the interactive element
+- Analysis for the visualizations
+- Next steps to take for Segment 3
+- Future visualization ideas and recommendations for improving current visualization
+
+In the Tableau dashboard, you will find initial visualizations. Examples of visualization include the following:
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20GDP%20vs%20CO2%20Emission.png" width="600"/>
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Emissions%20per%20Capita.png" width="600"/>
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Energy%20consumption%20per%20Capita%20vs%20Emissions.png" width="600"/>
 
 ## Link to the Presentation
 [link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
