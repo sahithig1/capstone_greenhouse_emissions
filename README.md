@@ -6,20 +6,20 @@ As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthrou
 This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
 
 For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
-- Trends/Factors: 
-  - What are the countries’ annual CO2 emissions?
-  - Per capita: how much CO2 does the average person emit?
-  - How does GDP influence Co2 emissions? 
-  - How does Urban population in a country affect CO2 emissions?
-  - What share of global CO2 emissions are emitted by the country?
-  - What are the countries’ annual CO2 emissions?
-  - Cumulative: how much CO2 has it produced to date?
-  - Year-on-year change: what is the percentage change in CO2 emissions?
+
+- General
+  - What countries have the largest CO2 greenhouse gas emissions (GHG)?
+  - What are the GHG emissions per country?
 - Machine Learning: 
-  - Can a machine learning model show that there is a correlation between factors and emmisions?
+  - Can a machine learning model show that there is a correlation between factors that may influence CO2 emissions?
+- Factors influencing emissions: 
+  - How does CO2 emissions change year over year?
+  - How does GDP influence CO2 emissions? 
+  - How does population influence CO2 emissions? 
 - USA Data: 
-  - Which state and city has the most emissions?
-  - What sector does  
+  - Which state and city has the most CO2 emissions?
+  - What sector generates the most CO2 emissions?
+  - What cities contribute to the CO2 emissions' sectors?
 
 ## Project Outline: Segment 3
 - <b>Presentation: </b>
@@ -49,6 +49,30 @@ For our project, we have an investor that would like to tap into the climate spe
 - Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
+### Database
+We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. The data is then loaded into a local PostGres database. Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
+
+#### The ERD diagram is shown below,
+
+![ERD diagram](images/ERD_final.png?raw=true)
+
+#### Database stores static data for use during the project.
+
+![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
+![sector_emissions](images/sector_emissions_sample.png?raw=true)
+
+#### Join using the database language
+
+![sql_join_ghg_emissions](images/sql_join_ghg_emissions.png?raw=true)
+![sql_join_sector_emissions](images/sql_join_sector_emissions.png?raw=true)
+
+#### Database interfaces with the project in some format (database connects to the model)
+![ML connected](images/MLconnected_db.png?raw=true)
+
+#### Data Extraction:
+- The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
+![](images/raw_shape.png?raw=true)
+
 ### Machine Learning
 #### Data preprocessing
 - Unnecessary columns (like country)are dropped from the retrieved data.
@@ -81,17 +105,24 @@ For our project, we have an investor that would like to tap into the climate spe
 - A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
 - Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
 - Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
+
 #### Current Accuracy Score
 
 
 ## Link to the Dashboard
-[*pending* Link to the Dashboard](https://docs.google.com/presentation/d/e/2PACX-1vQYeBjycmIYUKQa_ksDCIQnI52Y7CwyaJ-3uvWlL2VfVYsqG3tEvpaX_F9x2d-6WKNKBScHEkWdv8hK/pub?start=false&loop=false&delayms=3000)
+[Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
 
 [Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
-[Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
-
 ## Dashboard
+In the Heroku Dashboard, you will find the following:
+- Home page using Tableau
+- Machine Learning Data 
+- Factors that influence CO2 emissions using Tableau
+- USA CO2 emissiosn data using Tableau
+- 2 interactive elements
+  - Radio buttons for filtering factor in Factors tab
+  - Dropdown menu for filtering state in USA tab
 
 In the Excel Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
@@ -99,20 +130,15 @@ In the Excel Dashboard Blueprint, you will find the following:
 - Analysis for the visualizations
 - Future visualization ideas and recommendations for improving current visualization
 
-### Tableau
+## Link to the Presentation
+[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
+
+## Summary and Recommendations for the Dashboard
 - We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
 - We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
 ![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png)
 
-Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
-
-### Plotly:
--
-### Machine Learning
--
-
-#### Analysis 
 At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
 When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
 ![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Statewise_Emissions_TX.png)
@@ -125,11 +151,5 @@ As the first step to our analysis, we can assume that Texas and Louisiana are hi
 ![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Analysis_state_sector_LA.png)
 
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
-
-## Link to the Presentation
-[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
-
-## Summary and Recommendations for the Dashboard
-
 
 
