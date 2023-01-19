@@ -91,13 +91,26 @@ For our project, we have an investor that would like to tap into the climate spe
 
 [Link to Tableau dashboard](https://public.tableau.com/app/profile/soumya.abraham)
 
-## Dashboard Analysis
+## Dashboard
 
 In the Excel Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
 - Description of the interactive element
 - Analysis for the visualizations
 - Future visualization ideas and recommendations for improving current visualization
+
+### Tableau
+- We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
+- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png)
+
+Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
+
+### Plotly:
+-
+### Machine Learning
+-
 
 #### Analysis 
 At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
@@ -117,17 +130,6 @@ We may need to look into the companies that emit the highest amounts of CO2 and 
 [link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
 
 ## Summary and Recommendations for the Dashboard
-### Tableau
-- We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
-- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
-- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
-![actions]()
 
-Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
-
-### Plotly:
--
-### Machine Learning
--
 
 
