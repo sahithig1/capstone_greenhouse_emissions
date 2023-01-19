@@ -136,11 +136,24 @@ In the Excel Dashboard Blueprint, you will find the following:
 [link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
 
 ## Summary and Recommendations for the Dashboard
-- We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
-- We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
+### Workflow: 
+The cleaned data from the database is used to create visualizations. The dashboard is an interactive  web application which showcases seamless integration of Tableau and Plotly visuals.
+
+#### Tableau
+- After bringing in our CSV files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, population growth, fossil usage, etc. 
+- We also used various forms of filtering (by Year, Top 10 countries etc) to allow for a more comprehensive study of the charts provided. 
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+
 ![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Creating%20actions.png)
 
+- Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
+
+#### Plotly:
+- HTML, CSS and Bootstrap are extensively used to build the layout of the dashboard page. 
+- The dashboard also houses plots built with Python's Plotly.
+- The Tableau visualizations are embedded into the web page using Tableau Embedding API. 
+
+#### Analysis 
 At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
 When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
 ![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_TX.png)
@@ -154,4 +167,6 @@ As the first step to our analysis, we can assume that Texas and Louisiana are hi
 
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
+#### Future visualization and improvement: 
 
+- Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
