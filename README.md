@@ -116,13 +116,15 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 ## Dashboard
 In the Heroku Dashboard, you will find the following:
-- Home page using Tableau
-- Machine Learning Data 
-- Factors that influence CO2 emissions using Tableau
-- USA CO2 emissiosn data using Tableau
-- 2 interactive elements
-  - Radio buttons for filtering factor in Factors tab
-  - Dropdown menu for filtering state in USA tab
+- The web application has a header image and navigation bar with several tabs. Upon clicking the navigation links, the user is directed to visual analysis.
+- The Home tab gives an overview of Greenhouse Gases and their emissions with various visuals to help grasp concepts better.  
+- The Model will summarize the prediction of Machine Learning algorithms used in the project.
+- The Factors tab employs interactivity with radio buttons that allow selection of a factor that can influence emissions.
+- The USA tab dives into the CO2 emissions within the country. 
+	- We have a map on the left showcasing the CO2 emissions within each city and state. A dropdown filter allows you to choose specific cities the investor may be interested in. This can be useful when you want to declutter the map to provide emissions in specific state(s).
+	- The bar graph on the right shows the CO2 emissions per state, sorted in descending order. You will notice that Texas has the highest CO2 emissions of all. 
+	- A second bar graph is placed at the bottom of the page, where we can see the various sectors, each divided by state and city.
+If you click on the TX bar, you will notice only the cities in TX will be highlighted in the sector bar graph.
 
 In the Excel Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
@@ -137,18 +139,18 @@ In the Excel Dashboard Blueprint, you will find the following:
 - We have opted for a blend of Plotly and Tableau in order to build an interactive website with informative data and accompanying visuals. 
 - We also used various forms of filtering (by Year, Top 10 countries ect) to allow for a more comprehensive study of the charts provided.
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
-![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Creating%20actions.png)
+![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Creating%20actions.png)
 
 At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
 When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
-![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Statewise_Emissions_TX.png)
+![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_TX.png)
 
 We also notice the the Chemical sector is the highest contributing sector for CO2 emission in LA. 
-![LA1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Statewise_Emissions_LA.png)
+![LA1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_LA.png)
 
 As the first step to our analysis, we can assume that Texas and Louisiana are high on our priority list of states needing assistance in cutting down their CO2 emissions, especially in the Chemicals sector.
-![TX2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Analysis_state_sector_TX.png)
-![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Dashboard%20Images/Analysis_state_sector_LA.png)
+![TX2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_TX.png)
+![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_LA.png)
 
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
