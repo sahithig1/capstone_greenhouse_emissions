@@ -1,0 +1,12 @@
+.header {
+    background-color: #FFFFFF;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.navbcolor {
+    background-color: #393a3a;
+}
+body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

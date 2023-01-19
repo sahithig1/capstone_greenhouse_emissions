@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gas Emissions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/ghg_style.css">
+    <script type="module" src="https://embedding.tableauusercontent.com/tableau.embedding.3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header">
+                <img src="../static/images/factory1.jpg" class="img-responsive mw-100 mh-100" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-inverse navbcolor">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="trends">Model</a></li>
+                                <li><a href="factors">Factors</a></li>
+                                <li><a href="usdata">USA</a></li>
+                                <li><a href="analysis">Analysis</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h3 class="text-left">Greenhouse gases! What are they?</h3>
+                <p class="text-left">The greenhouse effect is the natural warming of
+                    the earth that results when
+                    gases in the atmosphere
+                    trap heat from the sun that would otherwise escape into space.
+                    This is a good thing as it warms the planet to its comfortable average of
+                    59<sup>o</sup> F and keeps life on earth livable. Mankind’s voracious burning of
+                    fossil fuels for energy results in long lasting air pollutants, which trap the heat and cause the
+                    planet to get hotter.
+                    These heat-trapping
+                    pollutants—specifically carbon dioxide, methane, nitrous oxide, water vapor, and synthetic
+                    fluorinated gases—are known as greenhouse gases. The higher concentrations of greenhouse gases—and
+                    carbon dioxide in particular—is causing extra heat
+                    to be trapped and altering the planet’s climate systems in countless ways.
+                </p>
+            </div>
+            <div class=" col-md-7">
+                <h3 class="text-center">World Emissions (in kt) for 1991-2015</h3>
+                <div id="chart1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <tableau-viz id="tableauViz" src="https://public.tableau.com/views/Dashboard-Home/Dashboard-Home"
+                    height="800px" width="700px" toolbar="bottom" hide-tabs="true">
+                </tableau-viz>
+
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <p class="text-uppercase text-muted text-center">Presented by: Elaine, LOIS, MIA, SATYA, SHILPA.</p>
+        </footer>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graph1 = {{ gasJSON | safe}};
+    Plotly.plot('chart1', graph1, {});    
+</script>
+
+</html>

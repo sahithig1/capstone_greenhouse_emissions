@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gas Emissions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/ghg_style.css">
+    <script type="module" src="https://embedding.tableauusercontent.com/tableau.embedding.3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header">
+                <img src="../static/images/factory1.jpg" class="img-responsive mw-100 mh-100" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-inverse navbcolor">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="trends">Model</a></li>
+                                <li class="active"><a href="#">Factors</a></li>
+                                <li><a href="usdata">USA</a></li>
+                                <li><a href="analysis">Analysis</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h3 class="page-header text-center">Factors that influence emissions</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 border">
+                <p class="text-left">Select a factor:</p>
+                <div>
+                    <input type="radio" name="factor" value="GDP" id="gdp" checked>
+                    <label for="gdp">GDP</label>
+                </div>
+                <div>
+                    <input type="radio" name="factor" value="Population" id="population">
+                    <label for="population">Population</label>
+                </div>
+
+            </div>
+
+            <div class="col-md-10">
+                <tableau-viz id="tableauViz" src='https://public.tableau.com/views/CO2-GDP_16739067432140/CO2-GDP'
+                    height="800px" width="800px" toolbar="bottom" hide-tabs="true"></tableau-viz>
+            </div>
+
+        </div>
+        <footer class="container-fluid text-center">
+            <p class="text-uppercase text-muted text-center">presented by Elaine, LOIS, MIA, SATYA, SHILPA.</p>
+        </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    const radioButtons = d3.selectAll("input");
+    radioButtons.on('change', function (d) {
+        const selection = this.value;
+        const viz = document.getElementById("tableauViz");
+        if (selection == 'Energy') {
+            viz.src = 'https://public.tableau.com/views/EnergyConsumptionperCapitavCO2Emissions/EnergyConsumptionperCapitavCO2Emission';
+        } else if (selection == 'Population') {
+            viz.src = 'https://public.tableau.com/views/CO2-Population/CO2-Population';
+        } else {
+            viz.src = 'https://public.tableau.com/views/CO2-GDP_16739067432140/CO2-GDP';
+        }
+    });
+</script>
+
+</html>
