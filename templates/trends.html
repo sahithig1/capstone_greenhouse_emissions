@@ -38,7 +38,32 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-center">Please be patient! Work in progress...</h4>
+                <h3 class="text-center">Machine Learning Model Data</h3>
+                <p class="text-left">Climate Change data from World Bank database is used to analyze the factors that
+                    can
+                    influence greenhouse gas emissions.
+                    A hypothesis is formulated to test if CO<sub>2</sub> emissions depend on country-specific features
+                    available in
+                    the dataset and can be predicted from these.
+                    Machine learning models are built for predicting CO<sub>2</sub>
+                    emissions from growth indicators like Gross Domestic Product (GDP), population, and
+                    fossil fuel usage. Due to the exhibition of nonlinearity of emissions with respect to
+                    country-specific features,
+                    Decision Tree Regression and Random Forest Regression models are considered.
+                    Comparing the root mean square error (RMSE) between the two,
+                    Random Forest Regressor(RMSE=0.0493) fits the data better than Decision Tree
+                    Regressor (RSME = 0.416). An R-Squared of 99.3% is recorded by Random Forest Regressor.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="text-center">Decision Tree Regression</h5>
+                <img src="../static/images/dtree_metrics.png" class="img-responsive mw-100 mh-100" />
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-center">Random Forest Regression</h5>
+                <img src="../static/images/rf_metrics.png" class="img-responsive mw-100 mh-100" />
             </div>
         </div>
     </div>
