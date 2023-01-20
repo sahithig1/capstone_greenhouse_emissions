@@ -13,10 +13,10 @@ Machine_Learning_Model
 
 ## Emissions Model Creation:
 
-- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
+- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 7182 rows and 17 columns.
 <img src="images/emissions_df.png" width="300"/>
 
-- With 19 columns to explore, the variables involved are classified as dependent and independent variables.
+- With 17 columns to explore, the variables involved are classified as dependent and independent variables.
 - Dependent Variables
   - emissions_total
   - emissions_per_capita
@@ -28,11 +28,17 @@ Machine_Learning_Model
 
 - Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
 - **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
+- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, Urban Population %, Electricity Access %, Cereal Yield 
 - Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
 - Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
 
+	
+               
 - How are you training your model?
+-   training and testing sets
+		.	The training and testing data are split in 70:30 ratio. 
+     
+- 
 - What is the model's accuracy?
 - How does this model work?
 =======
@@ -167,9 +173,61 @@ The ERD diagram is shown below,
 - Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
 - Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
 
+
+- Data preprocessing
+		.Unnecessary columns (like country)are dropped from the retrieved data.
+		 
+	        . Address the skew by cuberrot transformer on positively skewd values
+          . Address the skew by cuberrot transformer on negetively skewed values
+          . Remove null values
+
 - How are you training your model?
+- training and testing sets
+		.	The training and testing data are split in 70:30 ratio. 
+    . Emissions per capita is considered as target variable out of three Dependent variables.
+    . The rest are considered as independent variables.
+    
+- Feature Engineering
+		•	The model tests the hypothesis whether CO2 emissions depend on  energy use, population metrics, GDP, cereal yield, etc.  available in the dataset and can be predicted from these.
+  		.	The dataset has three dependent variables that predict emissions.
+		.	Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
+    ![Screenshot 2023-01-19 at 9 11 13 PM](https://user-images.githubusercontent.com/55648656/213609840-1032e043-6276-4b71-849a-39c9ab8f0ea9.png)
+   .Emissions per capita is highly impacted by enery use per capita.
+    
+- Explanation of model choice, including limitations and benefits
+
+	 .CO2 emissions per capita shows both linear dependency and non-linear relationships with features plotted.
+        .Since features exhibit both linear and non-linear relationship with CO2 emissions per capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor will be trained can be used.
+
+       .A Random Forest Regression model is powerful and accurate. It usually performs great on many problems, including features with non-linear relationships. Disadvantages, however, include the following: there is no interpretability, overfitting may easily occur, we must choose the number of trees to include in the model.
+
+	.	◦	Decision Tree is a Supervised learning technique that can be used for both classification and Regression problems, but mostly it is preferred for solving Classification problems. It is a tree-structured classifier, where internal nodes represent the features of a dataset, branches represent the decision rules and each leaf node represents the outcome.
+  
+  Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+
+	Implemented Hyper-parameter tuning in Segment 3 to optimize the ML model. 
+
+ To fit a machine learning model into different problems, its hyper-parameters must be tuned. Selecting the best hyper-parameter configuration for machine  learning models has a direct impact on the model's performance.
+
+ .Grid Search approach have been implemented for HPT:
+	Grid search is the simplest algorithm for hyper-parameter tuning (HPT). Basically, it divides the domain of the hyper-parameters into a discrete grid. Then, try every combination of values  of this grid, calculating some performance metrics using cross-validation. The point of the grid that maximizes the average value in cross-validation, is the optimal combination of values for the hyper-parameters.
+  
+  .Also, implemented algorithm for Support Vector Machine(SVM) and K-NearestNeighbors(KNN) to cross validate the model.
+  
+  ✓ Description of how they have trained themodel thus far, and any additional training that will take place
+	 
+	After Hyper-Parameter Tuning, it is observed that the model  trained has not much improvement in the model .    
+ ![Screenshot 2023-01-19 at 9 16 18 PM](https://user-images.githubusercontent.com/55648656/213610333-80c431a7-4a67-4b30-9d71-14e2ce775ed5.png)
+   
 - What is the model's accuracy?
-- How does this model work?
+
+
+![Screenshot 2023-01-19 at 9 18 10 PM](https://user-images.githubusercontent.com/55648656/213610529-aed319ca-3fca-4ea4-9a3c-ec3418bedbb4.png)
+
+
+![Screenshot 2023-01-19 at 9 16 37 PM](https://user-images.githubusercontent.com/55648656/213610358-7fd6b692-7541-4435-b5f4-24543a384070.png)
+
+
 
 ## *Pending* Link to the Dashboard
 [link to Tableau dashboard] <a href="">link to dashboard</a>
@@ -178,3 +236,4 @@ The ERD diagram is shown below,
 [link to Google Slides Presentation] <a href="">link to presentation</a>
 
 ## *Pending* Summary and Recommendations
+
