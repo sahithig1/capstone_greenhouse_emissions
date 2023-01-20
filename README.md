@@ -1,4 +1,4 @@
-# Working Title: Predicting and Analyzing Greenhouse Gas Emissions
+# Predicting Greenhouse Gas Emissions with Machine Learning and Data Analysis
 
 ## Project Overview
 As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
@@ -120,9 +120,9 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 ## Link to the Dashboard
 [Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
 
-[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
+[Link to the Tableau Workbook](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
 
-[Link to the Tableau](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
+[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
 ## Dashboard
 In the Heroku Dashboard, you will find the following:
