@@ -158,6 +158,7 @@ The cleaned data from the database is used to create visualizations. The dashboa
 
 - Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
 
+=======
 #### Plotly:
 - HTML, CSS and Bootstrap are extensively used to build the layout of the dashboard page. 
 - The dashboard also houses plots built with Python's Plotly.
@@ -180,3 +181,4 @@ We may need to look into the companies that emit the highest amounts of CO2 and 
 #### Future visualization and improvement: 
 
 - Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
+
