@@ -124,6 +124,8 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 [Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
+[Link to the Tableau](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
+
 ## Dashboard
 In the Heroku Dashboard, you will find the following:
 - The web application has a header image and navigation bar with several tabs. Upon clicking the navigation links, the user is directed to visual analysis.
