@@ -36,7 +36,7 @@ Machine_Learning_Model
                
 - How are you training your model?
 -   training and testing sets
-		.	The training and testing data are split in 70:30 ratio. 
+	.The training and testing data are split in 70:30 ratio. 
      
 - 
 - What is the model's accuracy?
@@ -154,7 +154,7 @@ The ERD diagram is shown below,
 
 ### Emissions Model Creation:
 
-- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
+- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 7182 rows and 17 columns.
 <img src="images/emissions_df.png" width="300"/>
 
 - With 19 columns to explore, the variables involved are classified as dependent and independent variables.
@@ -177,22 +177,23 @@ The ERD diagram is shown below,
 - Data preprocessing
 		.Unnecessary columns (like country)are dropped from the retrieved data.
 		 
-	        . Address the skew by cuberrot transformer on positively skewd values
-          . Address the skew by cuberrot transformer on negetively skewed values
-          . Remove null values
+	  . Address the skew by cuberrot transformer on positively skewd values.
+          . Address the skew by cuberrot transformer on negetively skewed values.
+          . Remove null values.
+	  . After adressing the skew the data set contains 3684 rows and 12 columns.
 
 - How are you training your model?
 - training and testing sets
-		.	The training and testing data are split in 70:30 ratio. 
+    . The training and testing data are split in 70:30 ratio. 
     . Emissions per capita is considered as target variable out of three Dependent variables.
     . The rest are considered as independent variables.
     
 - Feature Engineering
 		•	The model tests the hypothesis whether CO2 emissions depend on  energy use, population metrics, GDP, cereal yield, etc.  available in the dataset and can be predicted from these.
   		.	The dataset has three dependent variables that predict emissions.
-		.	Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
+		.	Upon plotting the feature importance emissions_per_capita is highly impacted by energy use per capita.
     ![Screenshot 2023-01-19 at 9 11 13 PM](https://user-images.githubusercontent.com/55648656/213609840-1032e043-6276-4b71-849a-39c9ab8f0ea9.png)
-   .Emissions per capita is highly impacted by enery use per capita.
+   		
     
 - Explanation of model choice, including limitations and benefits
 
@@ -220,6 +221,8 @@ The ERD diagram is shown below,
  ![Screenshot 2023-01-19 at 9 16 18 PM](https://user-images.githubusercontent.com/55648656/213610333-80c431a7-4a67-4b30-9d71-14e2ce775ed5.png)
    
 - What is the model's accuracy?
+
+R-Squared (R² or the coefficient of determination) is a statistical measure in a regression model that determines the proportion of variance in the dependent variable that can be explained by the independent variable. In other words, r-squared shows how well the data fit the regression model (the goodness of fit)
 
 
 ![Screenshot 2023-01-19 at 9 18 10 PM](https://user-images.githubusercontent.com/55648656/213610529-aed319ca-3fca-4ea4-9a3c-ec3418bedbb4.png)
