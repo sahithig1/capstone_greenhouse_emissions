@@ -77,14 +77,10 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 - Unnecessary columns (like country) are dropped from the retrieved data.
 - After ensuring there are no duplicates, the column headers of the dataset are renamed.
 - Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
-- Address the skew by cuberrot transformer on positively and negatively skewed values.
+- The skew is addressed by using a cuberoot transformer.
 
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/filter_shape.png" width="500" >
-- The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
-
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/missing_values.png" width="500" >
-
-- Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
+- The proportion of the missing data for each variable in the data is computed. Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
 - Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
 - The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
 
@@ -99,7 +95,6 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/viz1.png" width="700" >
 
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/log1.png" width="700" >
 
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data. My dominant features are the 
@@ -109,18 +104,14 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 - The training and testing data are split in 70:30 ratio.
 - CO2 emissions per capita shows both linear dependency and non-linear relationships with features plotted.
-- Since features exhibit both linear and non-linear relationship with CO2 emissions per capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor will be trained can be used.
-- A Random Forest Regression model is powerful and accurate. It usually performs great on many problems, including features with non-linear relationships. Disadvantages, however, include the following: there is no interpretability, overfitting may easily occur, we must choose the number of trees to include in the model.
-- Decision Tree is a Supervised learning technique that can be used for both classification and Regression problems, but mostly it is preferred for solving Classification problems. It is a tree-structured classifier, where internal nodes represent the features of a dataset, branches represent the decision rules and each leaf node represents the outcome.
-- The DecisionTreeRegressor seems to handle skewness of data better.
 - Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
 - **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
+- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield.
 - Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since majority of features exhibit non-linear relationship with target variable, DecisionTreeRegressor and RandomForestRegressor models are chosen to predict emissions.
-- Grid search is the simplest algorithm for hyper-parameter tuning (HPT). Basically, it divides the domain of the hyper-parameters into a discrete grid. Then, try every combination of values of this grid, calculating some performance metrics using cross-validation. The point of the grid that maximizes the average value in cross-validation, is the optimal combination of values for the hyper-parameters.
-- Implemented Hyper-parameter tuning in Segment 3 to optimize out ML model. Following approach have been implemented for HPT: Grid Search
-- After Hyper-Parameter Tuning, it is observed that the model trained has not much improvement in the model.
+- Since features exhibit both linear and non-linear relationship with CO2 emissions per capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor are trained.
+- The DecisionTreeRegressor seems to handle skewness of data better.
+- Grid search is the simplest algorithm is implemented for Hyper Parameter Tuning.
+- The model did not show improvement after Hyper Parameter Tuning.
 
 #### Current Accuracy Score
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ML_random_regressor.png" width="700" >
