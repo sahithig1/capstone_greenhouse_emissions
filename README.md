@@ -1,4 +1,4 @@
-# Working Title: Predicting and Analyzing Greenhouse Gas Emissions
+# Predicting Greenhouse Gas Emissions with Machine Learning and Data Analysis
 
 ## Project Overview
 As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
@@ -43,7 +43,7 @@ For our project, we have an investor that would like to tap into the climate spe
   - At least one interactive element 
 
 ## Resources
-- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv] (https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
+- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, PostgreSQL, Flask 1.1.2, HTML5, CSS, Bootstrap 3.3.7, D3, Plotly 5.9.0
 - Library: Pandas, Matplotlib, Numpy, Seaborn, WBGAPI
 - Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
@@ -54,50 +54,58 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 #### The ERD diagram is shown below,
 
-![ERD diagram](images/ERD_final.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ERD_final.png" width="550" >
 
 #### Database stores static data for use during the project.
 
 ![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
-![sector_emissions](images/sector_emissions_sample.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sector_emissions_sample.png" width="600" >
 
 #### Join using the database language
-
-![sql_join_ghg_emissions](images/sql_join_ghg_emissions.png?raw=true)
-![sql_join_sector_emissions](images/sql_join_sector_emissions.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_ghg_emissions.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_sector_emissions.png" width="700" >
 
 #### Database interfaces with the project in some format (database connects to the model)
-![ML connected](images/MLconnected_db.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/MLconnected_db.png" width="700" >
 
 #### Data Extraction:
 - The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
-![](images/raw_shape.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/raw_shape.png" width="200" >
 
 ### Machine Learning
 #### Data preprocessing
 - Unnecessary columns (like country)are dropped from the retrieved data.
 - After ensuring there are no duplicates, the column headers of the dataset are renamed.
 - Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
-![](images/filter_shape.png?raw=true)
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/filter_shape.png" width="500" >
 - The proportion of the missing data for each variable in the data is computed and the stacked bar plot is shown below:
-![](images/missing_values.png?raw=true)
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/missing_values.png" width="500" >
+
 - Since dropping rows with nulls at this point drastically reduces the size and diversity of dataset, imputation of data is considered.
 - Most of the data columns have skewed distribution. To refrain from introducing bias, the nulls are filled with respective median values.
 - The rest of rows with null values are dropped from the dataset. The data is then inserted into the local Postgres database.
-![](images/emissions_shape.png?raw=true)
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/emissions_shape.png" width="200" >
+
 - The model reads data from the database into a Pandas data frame.
 - The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
-- The dataset has three dependent	variables that predict emissions.
+- The dataset has three dependent variables that predict emissions.
 - Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
 - The data is then checked for skewness and the distribution of data is visualized.
-![](images/viz1.png?raw=true)
+
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/viz1.png" width="700" >
+
 - As an attempt to address skewness in data, data is binned per dominant features and log transformation is used on all dependent and independent variables.
-![](images/log1.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/log1.png" width="700" >
+
 - It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
 - Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data. My dominant features are the 
 - The Label and features are then determined.
-![](images/sel1.png?raw=true)
-![](images/sel2.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel1.png" width="600" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel2.png" width="600" >
+
 - The training and testing data are split in 80:20 ratio.
 - The DecisionTreeRegressor seems to handle skewness of data better.
 - Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
@@ -111,6 +119,8 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 ## Link to the Dashboard
 [Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
+
+[Link to the Tableau Workbook](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
 
 [Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
@@ -168,5 +178,5 @@ As the first step to our analysis, we can assume that Texas and Louisiana are hi
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
 #### Future visualization and improvement: 
-- Work on visuals which can suggest possible US cities and sectors for investment.
 
+- Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
