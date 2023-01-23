@@ -26,7 +26,7 @@ app = Flask(__name__)
 
 # Function to get total amount of gas emissions
 def load_gases():
-    df = pd.read_csv("Resources/ghg_emissions_viz.csv")
+    df = pd.read_csv("https://emissions-bucket.s3.amazonaws.com/ghg_emissions_viz.csv")
     gas_dict = {'Gas': ['CO2', 'CH4', 'NO2'],
                 'Emissions': [df['emissions_total'].sum(), df['methane_emissions(kt_CO2_emissions)'].sum(), df['nitrous_oxide_emissions(mt_CO2_emissions)'].sum()]}
     total_df = pd.DataFrame(gas_dict)
