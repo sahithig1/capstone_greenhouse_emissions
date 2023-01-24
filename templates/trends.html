@@ -48,46 +48,94 @@
                     Regressor and
                     Random Forest Regressor
                     models are built to predict CO<sub>2</sub>
-                    emissions from growth indicators like Gross Domestic Product (GDP), population, and
-                    energy usage.
+                    emissions from growth indicators like fossil usage, Gross Domestic Product (GDP) and population.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h4 id="roundborder" class="text-center">Features Importance
-                    <img src="../static/images/rf_feature_importances.png" class="img-responsive" width="500"
-                        height="700" />
-                </h4>
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Decision Tree Regressor Metrics</div>
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Root Mean Squared Error</td>
+                            <td>0.1442</td>
+                        </tr>
+                        <tr>
+                            <td>R-Squared</td>
+                            <td>0.9437</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class="col-md-6">
-
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Random Forest Regressor Metrics</div>
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Root Mean Squared Error</td>
+                            <td>0.0355</td>
+                        </tr>
+                        <tr>
+                            <td>R-Squared</td>
+                            <td>0.9965</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p class="text-left">Comparing the root mean square error (RMSE) between the two,
-                    Random Forest Regressor(RMSE=0.0281) fits the data better than Decision Tree
-                    Regressor (RSME = 0.199). An R-Squared of 99.3% is recorded by Random Forest Regressor.
-                </p>
+                <h4 id="roundborder" class="text-center">
+                    <ul class="text-left">
+                        <li>
+                            Random Forest Regressor fits the data better than Decision Tree
+                            Regressor.</li>
+                        <li>The weighted average error between the predictions and actuals in this dataset is 0.0355,
+                            which is likely a fair value given that 1.36 (kt) is the average actual
+                            emissions per capita.
+                        </li>
+                        <li>In conclusion, Random Forest Regressor allows prediction of CO<sub>2</sub> emissions per
+                            capita from country specific indicators like electricity access percent, fossil usage, urban
+                            population and GDP. </li>
+                    </ul>
+
+                </h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <h4 id="roundborder" class="text-center">Decision Tree Regressor
-                    <img src="../static/images/dt_metrics.png" class="img-responsive" width="450" height="600" />
-                </h4>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Feature Importance Chart</div>
+
+                    <img src="../static/images/feature_importances.png" class="img-responsive" width="500"
+                        height="700" />
+                </div>
+                <div class="col-md-4"></div>
             </div>
-            <div class="col-md-6">
-                <h4 id="roundborder" class="text-center">Random Forest Regressor
-                    <img src="../static/images/rf_metrics.png" class="img-responsive" width="450" height="600" />
-                </h4>
-            </div>
+
         </div>
-    </div>
-    <footer class="container-fluid text-center">
-        <p class="text-uppercase text-muted text-center">presented by Elaine, LOIS, MIA, SATYA, SHILPA.</p>
-    </footer>
+        <footer class="container-fluid text-center">
+            <p class="text-uppercase text-muted text-center">presented by Elaine, LOIS, MIA, SATYA, SHILPA.</p>
+        </footer>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
