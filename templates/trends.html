@@ -29,7 +29,7 @@
                                 <li class="active"><a href="#">Model</a></li>
                                 <li><a href="factors">Factors</a></li>
                                 <li><a href="usdata">USA</a></li>
-                                <li><a href="analysis">Analysis</a></li>
+                                <li><a href="analysis">Net Zero</a></li>
                             </ul>
                         </div>
                     </div>
@@ -38,32 +38,50 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Machine Learning Model Data</h3>
+                <h3 class="text-center">Using Machine Learning to Predict Emissions</h3>
                 <p class="text-left">Climate Change data from World Bank database is used to analyze the factors that
                     can
                     influence greenhouse gas emissions.
                     A hypothesis is formulated to test if CO<sub>2</sub> emissions depend on country-specific features
                     available in
-                    the dataset and can be predicted from these.
-                    Machine learning models are built for predicting CO<sub>2</sub>
+                    the dataset and can be predicted from these. Two Machine Learning algorithms: Decision Tree
+                    Regressor and
+                    Random Forest Regressor
+                    models are built to predict CO<sub>2</sub>
                     emissions from growth indicators like Gross Domestic Product (GDP), population, and
-                    fossil fuel usage. Due to the exhibition of nonlinearity of emissions with respect to
-                    country-specific features,
-                    Decision Tree Regression and Random Forest Regression models are considered.
-                    Comparing the root mean square error (RMSE) between the two,
-                    Random Forest Regressor(RMSE=0.0493) fits the data better than Decision Tree
-                    Regressor (RSME = 0.416). An R-Squared of 99.3% is recorded by Random Forest Regressor.
+                    energy usage.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h5 class="text-center">Decision Tree Regression</h5>
-                <img src="../static/images/dtree_metrics.png" class="img-responsive mw-100 mh-100" />
+                <h4 id="roundborder" class="text-center">Features Importance
+                    <img src="../static/images/rf_feature_importances.png" class="img-responsive" width="500"
+                        height="700" />
+                </h4>
             </div>
             <div class="col-md-6">
-                <h5 class="text-center">Random Forest Regression</h5>
-                <img src="../static/images/rf_metrics.png" class="img-responsive mw-100 mh-100" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-left">Comparing the root mean square error (RMSE) between the two,
+                    Random Forest Regressor(RMSE=0.0281) fits the data better than Decision Tree
+                    Regressor (RSME = 0.199). An R-Squared of 99.3% is recorded by Random Forest Regressor.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 id="roundborder" class="text-center">Decision Tree Regressor
+                    <img src="../static/images/dt_metrics.png" class="img-responsive" width="450" height="600" />
+                </h4>
+            </div>
+            <div class="col-md-6">
+                <h4 id="roundborder" class="text-center">Random Forest Regressor
+                    <img src="../static/images/rf_metrics.png" class="img-responsive" width="450" height="600" />
+                </h4>
             </div>
         </div>
     </div>
