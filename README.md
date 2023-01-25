@@ -26,10 +26,14 @@ For our project, we have an investor that would like to tap into the climate spe
 - Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
-### Database
-We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. The data is then loaded into a local PostGres database. Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
 
-#### The ERD diagram is shown below,
+### Data Extraction and Storage
+
+- The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
+- Pandas is used to clean the data and perform exploratory data analysis. The data is then loaded into PostGreSQL AWS RDS instance. 
+- The structure of the database is designed using the QuickDBD tool.
+
+#### The ERD diagram is shown below:
 
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ERD_final.png" width="550" >
 
@@ -38,16 +42,12 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 ![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sector_emissions_sample.png" width="600" >
 
-#### Join using the database language
+#### SQL Joins
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_ghg_emissions.png" width="700" >
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_sector_emissions.png" width="700" >
 
-#### Database interfaces with the project in some format (database connects to the model)
+#### Database interfaces with the project (database connects to the model)
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/MLconnected_db.png" width="700" >
-
-#### Data Extraction:
-- The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/raw_shape.png" width="200" >
 
 ### Machine Learning
 #### Data preprocessing
