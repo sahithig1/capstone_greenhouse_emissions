@@ -10,3 +10,11 @@
 body {
     font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#roundborder {
+    border-radius: 25px;
+    border: 2px solid #7c8184;
+    padding: 12px; 
+    width: auto;
+    height: auto;  
+  }

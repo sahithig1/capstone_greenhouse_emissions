@@ -29,7 +29,7 @@
                                 <li><a href="trends">Model</a></li>
                                 <li class="active"><a href="#">Factors</a></li>
                                 <li><a href="usdata">USA</a></li>
-                                <li><a href="analysis">Analysis</a></li>
+                                <li><a href="analysis">Net Zero</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,14 +49,17 @@
                     <label for="gdp">GDP</label>
                 </div>
                 <div>
+                    <input type="radio" name="factor" value="Energy" id="energy">
+                    <label for="population">Energy Use</label>
+                </div>
+                <div>
                     <input type="radio" name="factor" value="Population" id="population">
                     <label for="population">Population</label>
                 </div>
-
             </div>
 
             <div class="col-md-10">
-                <tableau-viz id="tableauViz" src='https://public.tableau.com/views/CO2-GDP_16739067432140/CO2-GDP'
+                <tableau-viz id="tableauViz" src='https://public.tableau.com/views/CO2-GDPperCapita/CO2-GDP'
                     height="800px" width="800px" toolbar="bottom" hide-tabs="true"></tableau-viz>
             </div>
 
@@ -73,11 +76,11 @@
         const selection = this.value;
         const viz = document.getElementById("tableauViz");
         if (selection == 'Energy') {
-            viz.src = 'https://public.tableau.com/views/EnergyConsumptionperCapitavCO2Emissions/EnergyConsumptionperCapitavCO2Emission';
+            viz.src = 'https://public.tableau.com/views/CO2-EnergyFossil/CO2-Energy';
         } else if (selection == 'Population') {
             viz.src = 'https://public.tableau.com/views/CO2-Population/CO2-Population';
         } else {
-            viz.src = 'https://public.tableau.com/views/CO2-GDP_16739067432140/CO2-GDP';
+            viz.src = 'https://public.tableau.com/views/CO2-GDPperCapita/CO2-GDP';
         }
     });
 </script>
