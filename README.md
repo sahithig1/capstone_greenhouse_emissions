@@ -1,11 +1,9 @@
 # Predicting Greenhouse Gas Emissions with Machine Learning and Data Analysis
 
 ## Project Overview
-As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
+As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. In August 2022, the Biden administration managed to pass the Inflation Reduction Act. This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. For decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
 
-This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
-
-For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
+For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. We will be using machine learning algorithms to predict CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy usage. We will be analyzing greenhouse gas emissions by the following:
 
 - General
   - What countries have the largest CO2 greenhouse gas emissions (GHG)?
@@ -20,27 +18,6 @@ For our project, we have an investor that would like to tap into the climate spe
   - Which state and city has the most CO2 emissions?
   - What sector generates the most CO2 emissions?
   - What cities contribute to the CO2 emissions' sectors?
-
-## Project Outline: Segment 3
-- <b>Presentation: </b>
-  - Content 
-  - Google Slides
-- <b>Github:</b>
-  - Main Branch
-  - README.md
-  - Individual Branches
-- <b>Machine Learning Model:</b>
-  - Description of data preprocessing  
-  - Description of feature engineering and the feature selection, including their decision-making process 
-  - Description of how data was split into training and testing sets
-  - Explanation of model choice, including limitations and benefits
-  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-  - Description of how they have trained the model thus far, and any additional training that will take place
-  - Description of current accuracy score   
-- <b>Dashboard:</b>
-  - Images from the initial analysis
-  - Data (images or report) from the machine learning task
-  - At least one interactive element 
 
 ## Resources
 - Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
