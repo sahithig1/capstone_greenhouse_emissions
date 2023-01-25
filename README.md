@@ -50,36 +50,28 @@ For our project, we have an investor that would like to tap into the climate spe
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/MLconnected_db.png" width="700" >
 
 ### Machine Learning
-#### Data preprocessing
-- Unnecessary columns (like country) are dropped from the retrieved data.
-- After ensuring there are no duplicates, the column headers of the dataset are renamed.
-- Missing values per year are detected and years with a fair amount of data are considered for further analysis. The same logic is used to filter country data.
-- The skew is addressed by using a cuberoot transformer.
-- The model reads data from the database into a Pandas data frame.
-- The model tests the hypothesis whether CO2 emissions depend on country-specific features (such as energy use, population metrics, GDP, cereal yield, etc. ) available in the dataset and can be predicted from these.
-- The dataset has three dependent variables that predict emissions.
-- Upon plotting correlation matrix, emissions_per_capita is chose as label as this is correlated to many independent variables.
-- It is observed that the skew has reduced in the data distribution. Though not all features are fairly symmetric.
-- Correlation matrix plotted after handling skewness showed increase in relation coefficients compared to original data. My dominant features are the 
-- The Label and features are then determined.
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel1.png" width="600" >
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sel2.png" width="600" >
 
-- The training and testing data are split in 70:30 ratio.
-- CO2 emissions per capita shows both linear dependency and non-linear relationships with features plotted.
-- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
-- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield.
-- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since features exhibit both linear and non-linear relationship with CO2 emissions per capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor are trained.
-- The DecisionTreeRegressor seems to handle skewness of data better.
-- Grid search is the simplest algorithm is implemented for Hyper Parameter Tuning.
-- The model did not show improvement after Hyper Parameter Tuning.
+- The model tests the hypothesis whether CO2 emissions can be predicted from country-specific features (such as population metrics, GDP, fossil use, etc. ) available in the dataset.
 
-#### Current Accuracy Score
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ML_random_regressor.png" width="700" >
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ML_decision_tree.png" width="700" >
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ML_hyperparameter.png" width="700" >
+#### Data Preprocessing
+- The model connects to AWS RDS instance to get data.
+- Largely skewed columns are handled by a cuberoot transform to achieve a fairly symmetric distribution.
+- emissions_per_capita is the label for the model.
+- Correlation matrix is plotted to identify strongly correlated features w.r.to emissions_per_capita.
+- Scatter plots are used to show the distribution of features with label. Since all features show non-linear relation with emissions_per_capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor are trained.
+
+#### Training and Hyper Parameter Tuning
+- The training and testing data are split in 67:33 ratio.
+- Grid Search algorithm is implemented on both models to determine hyper parameters.
+- Decision Tree Regressoe did not show improvement upon hyper parameter tuning.
+- Randomized Search algorithm is also implemented on Random Forest Regressor.
+- The best parameters are used to train the models to record RMSE. The details are shown below:
+<table>
+	<tr>
+		<td><img src="static/images/dtree_metrics.png" width="500"></td>
+		<td><img src="static/images/rf_metrics.png" width="500"></td>
+	</tr>
+</table>
 
 ## Link to the Dashboard
 [Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
