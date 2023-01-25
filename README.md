@@ -111,7 +111,6 @@ The cleaned data from the database is used to create visualizations. The dashboa
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
 - Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
 
-=======
 #### Plotly:
 - HTML, CSS and Bootstrap are extensively used to build the layout of the dashboard page. 
 - The dashboard also houses plots built with Python's Plotly.
