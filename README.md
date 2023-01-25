@@ -90,6 +90,7 @@ In the Heroku Dashboard, you will find the following:
 	- The bar graph on the right shows the CO2 emissions per state, sorted in descending order. You will notice that Texas has the highest CO2 emissions of all. 
 	- A second bar graph is placed at the bottom of the page, where we can see the various sectors, each divided by state and city.
 If you click on the TX bar, you will notice only the cities in TX will be highlighted in the sector bar graph.
+- The Net Zero tab introduces us to some factors that can help achieve Net Zero.
 
 In the Excel Dashboard Blueprint, you will find the following:
 - Description of the tools used for the final dashboard
@@ -108,9 +109,6 @@ The cleaned data from the database is used to create visualizations. The dashboa
 - After bringing in our CSV files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, population growth, fossil usage, etc. 
 - We also used various forms of filtering (by Year, Top 10 countries etc) to allow for a more comprehensive study of the charts provided. 
 - We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
-
-![actions](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Creating%20actions.png)
-
 - Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
 
 =======
@@ -121,19 +119,12 @@ The cleaned data from the database is used to create visualizations. The dashboa
 
 #### Analysis 
 At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
-When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.
-![TX1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_TX.png)
-
-We also notice the the Chemical sector is the highest contributing sector for CO2 emission in LA. 
-![LA1](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Statewise_Emissions_LA.png)
-
+When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.  
 As the first step to our analysis, we can assume that Texas and Louisiana are high on our priority list of states needing assistance in cutting down their CO2 emissions, especially in the Chemicals sector.
-![TX2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_TX.png)
-![LA2](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Dashboard%20Images/Analysis_state_sector_LA.png)
 
 We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
-#### Future visualization and improvement: 
+#### Future improvements: 
 
-- Creating individual dropdown menu for each factor (Energy Use, Urban Population Growth and GDP) in the Factor tab. 
-
+- In-depth analysis of GDP per capita, population and energy use in the United States and how CO2 emissions are affected.
+- Inclusion of other Green House Gases such as methane, nitrous oxide and flouride. 
