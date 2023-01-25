@@ -28,19 +28,18 @@ For our project, we have an investor that would like to tap into the climate spe
 ##  Results
 
 ### Data Extraction and Storage
+We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. An Amazon Relational Database has been established to store the data. The structure of the database is designed using the QuickDBD tool.
 
-- The data for the project is extracted from the World bank database. Though, there are several ways to retrieve the dataset, Python’s WBGAPI is chosen because of the ease of data retrieval and availability of current data.
-- Pandas is used to clean the data and perform exploratory data analysis. The data is then loaded into PostGreSQL AWS RDS instance. 
-- The structure of the database is designed using the QuickDBD tool.
-
-#### The ERD diagram is shown below:
+#### The ERD diagram is shown below,
 
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ERD_final.png" width="550" >
 
-#### Database stores static data for use during the project.
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/AWS_RDS_DB.png" width="700" >
 
-![ghg_emissions](images/ghg_emissions_sample.png?raw=true)
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sector_emissions_sample.png" width="600" >
+#### Database stores static data for use during the project.
+A connection to the database is established and inserted data into corresponding tables.
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_data.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_sectors_emissions.png" width="700" >
 
 #### SQL Joins
 <img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_ghg_emissions.png" width="700" >
