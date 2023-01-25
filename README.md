@@ -20,7 +20,7 @@ For our project, we have an investor that would like to tap into the climate spe
   - What cities contribute to the CO2 emissions' sectors?
 
 ## Resources
-- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
+- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/Data/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/Data/ghg_emissions.csv), [USA_CO2_data.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/Data/USA_CO2_data.csv)
 - Database: AWS
 - Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, PostgreSQL, Flask 1.1.2, HTML5, CSS, Bootstrap 3.3.7, D3, Plotly 5.9.0, pgAdmin4, 
 - Library: Pandas, Psycopg2, Matplotlib, Numpy, Seaborn, SQLAlchemy, WBGAPI
@@ -34,21 +34,21 @@ We used a python library(wbgapi) that fetches World Bank Data directly into the 
 
 #### The ERD diagram is shown below,
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ERD_final.png" width="550" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/ERD_final.png" width="550" >
 
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/AWS_RDS_DB.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/AWS_RDS_DB.png" width="700" >
 
 #### Database stores static data for use during the project.
 A connection to the database is established and inserted data into corresponding tables.
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_data.png" width="700" >
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_sectors_emissions.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/load_data.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/load_sectors_emissions.png" width="700" >
 
 #### SQL Joins
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_ghg_emissions.png" width="700" >
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_sector_emissions.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/sql_join_ghg_emissions.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/sql_join_sector_emissions.png" width="700" >
 
 #### Database interfaces with the project (database connects to the model)
-<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/MLconnected_db.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/static/images/MLconnected_db.png" width="700" >
 
 ### Machine Learning
 
@@ -78,8 +78,6 @@ A connection to the database is established and inserted data into corresponding
 [Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
 
 [Link to the Tableau Workbook](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
-
-[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
 ## Dashboard
 In the Heroku Dashboard, you will find the following:
