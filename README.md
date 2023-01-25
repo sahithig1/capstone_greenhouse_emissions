@@ -1,285 +1,131 @@
-# Working Title: Predicting and Analyzing Greenhouse Gas Emmissions
+# Predicting Greenhouse Gas Emissions with Machine Learning and Data Analysis
 
 ## Project Overview
-The damage caused by climate change over this past year was at times so immense it was hard to comprehend. In Pakistan alone, extreme summer flooding killed thousands, displaced millions and caused over $40 billion in losses. Fall floods in Nigeria killed hundreds and displaced over 1 million people. Droughts in Europe, China and the U.S. dried out once-unstoppable rivers and slowed the flows of commerce on major arteries like the Mississippi and the Rhine.
+As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. In August 2022, the Biden administration managed to pass the Inflation Reduction Act. This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. For decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
 
-As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
+For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. We will be using machine learning algorithms to predict CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy usage. We will be analyzing greenhouse gas emissions by the following:
 
-This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
-
-For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
-- Per capita: how much CO2 does the average person emit?
-- What are the countries’ annual CO2 emissions?
-- Year-on-year change: what is the percentage change in CO2 emissions?
-- Cumulative: how much CO2 has it produced to date?
-- What share of global CO2 emissions are emitted by the country?
-- Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
-- Does energy used to sustain a person in a country have an effect on CO2 emissions? 
-- How does GDP influence Co2 emissions? 
-- How does Urban population in a country affect CO2 emissions?
-
-## Communication protocols
-We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
-
-## Project Outline
-- <b>Presentation: </b>
-  - Content 
-    - Selected topic
-    - Reason why they selected their topic
-    - Description of their source of data
-    - Questions they hope to answer with the data
-    - Description of the data exploration phase of the project
-    - Description of the analysis phase of the project
-    - Technologies, languages, tools, and algorithms used throughout the project 
-    - Result of analysis
-    - Recommendation for future analysis
-    - Anything the team would have done differently
-  - Google Slides: 
-    - Presentations are finalized in Google Slides
-  - Live Presentation
-    - All team members present in equal proportions 
-    - The team demonstrates interactivity of dashboard in real time 
-    - The presentation falls within any time limits provided by instructor 
-    - Submission includes speaker notes, flashcards, or a video of the presentation rehearsal
-- <b>Github:</b>
-  - Main Branch
-    - All code necessary to perform exploratory analysis
-    - All code necessary to complete machine learning portion of project 
-    - Any images that have been created (at least three)
-    - Requirements.txt file
-  - README.md
-    - Cohesive, structured outline of the project (this may include images, but should be easy to follow and digest)
-    - Link to dashboard (or link to video of dashboard demo)
-    - Link to Google Slides presentation
-  - Individual Branches
-    - At least one branch for each team member
-    - Each team member has at least four commits for the duration of the final segment (16 total commits per person)
-- <b>Machine Learning Model: Working code or their machine learning model</b>
-  - Description of data preprocessing 
-  - Description of feature engineering and the feature selection, including the team's decision-making process 
-  - Description of how data was split into training and testing sets
-  - Explanation of model choice, including limitations and benefits
-  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-  - Description of how model was trained (or retrained, if they are using an existing model)
-  - Description and explanation of model’s confusion matrix, including final accuracy score 
-- <b>Database: Present a final project with a fully integrated database</b>
-  - Database stores static data for use during the project
-  - Database interfaces with the project in some format (e.g., scraping updates the database, or database connects to the model)
-  - Includes at least two tables (or collections, if using MongoDB)
-  - Includes at least one join using the database language (not including any joins in Pandas) 
-  - Includes at least one connection string (using SQLAlchemy or PyMongo)
-- <b>Dashboard: </b>
-  - Images from the initial analysis
-  - Data (images or report) from the machine learning task
-  - At least one interactive element
+- General
+  - What countries have the largest CO2 greenhouse gas emissions (GHG)?
+  - What are the GHG emissions per country?
+- Machine Learning: 
+  - Can a machine learning model show that there is a correlation between factors that may influence CO2 emissions?
+- Factors influencing emissions: 
+  - How does CO2 emissions change year over year?
+  - How does GDP influence CO2 emissions? 
+  - How does population influence CO2 emissions? 
+- USA Data: 
+  - Which state and city has the most CO2 emissions?
+  - What sector generates the most CO2 emissions?
+  - What cities contribute to the CO2 emissions' sectors?
 
 ## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>
-- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
-- Library: WBGAPI
-- Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
+- Data Source: [Climate Change Data | Data Catalog](https://datacatalog.worldbank.org/search/dataset/0040205), [Climate Watch](https://www.climatewatchdata.org/data-explorer/historical-emissions?historical-emissions-data-sources=climate-watch&historical-emissions-gases=all-ghg&historical-emissions-regions=All%20Selected&historical-emissions-sectors=total-including-lucf%2Ctotal-including-lucf&page=1), [Emissions by Unit and Fuel Type|US EPA](https://www.epa.gov/ghgreporting/data-sets), [countries.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/countries.csv), [ghg_emissions.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/Resources/ghg_emissions.csv), [USA_CO2_data.csv](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/presentation/Resources/USA_CO2_data.csv)
+- Database: AWS
+- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0, PostgreSQL, Flask 1.1.2, HTML5, CSS, Bootstrap 3.3.7, D3, Plotly 5.9.0, pgAdmin4, 
+- Library: Pandas, Psycopg2, Matplotlib, Numpy, Seaborn, SQLAlchemy, WBGAPI
+
+- Overview Source: [Six climate breakthroughs that made 2022 a step toward net zero by Leslie Kaufman and Laura Millan Lombrana](https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html), [United States: CO2 Country Profile by Hannah Ritchie and Max Roser](https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU)
 
 ##  Results
-### Data Collection  
-We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. 
 
-### Data Cleaning and Analysis
-Pandas is used to clean the data and perform an exploratory analysis.
+### Data Extraction and Storage
+We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. Pandas is used to clean the data and perform an exploratory analysis. An Amazon Relational Database has been established to store the data. The structure of the database is designed using the QuickDBD tool.
 
-### Database Storage
-Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
+#### The ERD diagram is shown below,
 
-The ERD diagram is shown below,
-![](images/api_data_ERD.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/ERD_final.png" width="550" >
 
-* Database stores static data for use during the project.
-![](images/ghg_emissions_sample_data.png?raw=true)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/AWS_RDS_DB.png" width="700" >
 
-* Database interfaces with the project in some format (database connects to the model)
-![](images/MLconnected_db.png?raw=true)
+#### Database stores static data for use during the project.
+A connection to the database is established and inserted data into corresponding tables.
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_data.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/load_sectors_emissions.png" width="700" >
 
-### Data Extraction:
+#### SQL Joins
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_ghg_emissions.png" width="700" >
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/sql_join_sector_emissions.png" width="700" >
 
-- Datasets from [Climate TRACE](https://climatetrace.org/) are downloaded. After exploring the data, this dataset is not considered due to lack of dependent features that can address the project's outcome.
-- Later, World Bank climate change data is downloaded to train the model. Though, there are several ways to retrieve the dataset, Python's wbgapi API is used due to the ease of data retrieval and availability of current data.
+#### Database interfaces with the project (database connects to the model)
+<img src="https://github.com/sahithig1/capstone_greenhouse_emissions/blob/main/images/MLconnected_db.png" width="700" >
 
-### Data Cleaning
+### Machine Learning
 
-- Basic cleaning is done on the dataset to remove empty values.
-- The data is then loaded into a local PostGres database.
+- The model tests the hypothesis whether CO2 emissions can be predicted from country-specific features (such as population metrics, GDP, fossil use, etc. ) available in the dataset.
 
-### Emissions Model Creation:
+#### Data Preprocessing
+- The model connects to AWS RDS instance to get data.
+- Largely skewed columns are handled by a cuberoot transform to achieve a fairly symmetric distribution.
+- emissions_per_capita is the label for the model.
+- Correlation matrix is plotted to identify strongly correlated features w.r.to emissions_per_capita.
+- Scatter plots are used to show the distribution of features with label. Since all features show non-linear relation with emissions_per_capita, Machine Learning algorithms that can handle non-linearities like DecisionTreeRegressor and RandomForestRegressor are trained.
 
-- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
-<img src="images/emissions_df.png" width="300"/>
+#### Training and Hyper Parameter Tuning
+- The training and testing data are split in 67:33 ratio.
+- Grid Search algorithm is implemented on both models to determine hyper parameters.
+- Decision Tree Regressoe did not show improvement upon hyper parameter tuning.
+- Randomized Search algorithm is also implemented on Random Forest Regressor.
+- The best parameters are used to train the models to record RMSE. The details are shown below:
+<table>
+	<tr>
+		<td><img src="static/images/dtree_metrics.png" width="500"></td>
+		<td><img src="static/images/rf_metrics.png" width="500"></td>
+	</tr>
+</table>
 
-- With 19 columns to explore, the variables involved are classified as dependent and independent variables.
-- Dependent Variables
-  - emissions_total
-  - emissions_per_capita
-  - emissions_per_gdp
-- Variables to drop: year, country_name, country_code
-- The rest are considered as independent variables.
+## Link to the Dashboard
+[Link to the Heroku Dashboard](https://ghflask.herokuapp.com/)
 
-### Exploratory Data Analysis
+[Link to the Tableau Workbook](https://public.tableau.com/app/profile/soumya.abraham/viz/Capstone_Project_16739069678420/Capstone_Project)
 
-- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
-- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
-- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
+[Link to the Excel Dashboard Blueprint](https://github.com/sahithig1/capstone_greenhouse_emissions/blob/Visualization/Visualization%20Tracker.xlsx)
 
-- How are you training your model?
-- What is the model's accuracy?
-- How does this model work?
+## Dashboard
+In the Heroku Dashboard, you will find the following:
+- The web application has a header image and navigation bar with several tabs. Upon clicking the navigation links, the user is directed to visual analysis.
+- The Home tab gives an overview of Greenhouse Gases and their emissions with various visuals to help grasp concepts better.  
+- The Model will summarize the prediction of Machine Learning algorithms used in the project.
+- The Factors tab employs interactivity with radio buttons that allow selection of a factor that can influence emissions.
+- The USA tab dives into the CO2 emissions within the country. 
+	- We have a map on the left showcasing the CO2 emissions within each city and state. A dropdown filter allows you to choose specific cities the investor may be interested in. This can be useful when you want to declutter the map to provide emissions in specific state(s).
+	- The bar graph on the right shows the CO2 emissions per state, sorted in descending order. You will notice that Texas has the highest CO2 emissions of all. 
+	- A second bar graph is placed at the bottom of the page, where we can see the various sectors, each divided by state and city.
+If you click on the TX bar, you will notice only the cities in TX will be highlighted in the sector bar graph.
+- The Net Zero tab introduces us to some factors that can help achieve Net Zero.
 
-## *Pending* Link to the Dashboard
-[link to Tableau dashboard] <a href="">link to dashboard</a>
+In the Excel Dashboard Blueprint, you will find the following:
+- Description of the tools used for the final dashboard
+- Description of the interactive element
+- Analysis for the visualizations
+- Future visualization ideas and recommendations for improving current visualization
 
-## *Pending* Link to the Presentation
-[link to Google Slides Presentation] <a href="">link to presentation</a>
+## Link to the Presentation
+[link to Google Slides Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS_3j0Or_IGgdZwBIAsJDioPNrLeFdTmpARP94NagTTQFHqumSYEkyejG5D58UHU30W4D99TDhUWuLx/pub?start=false&loop=false&delayms=3000)
 
-## *Pending* Summary and Recommendations
-=======
-# Working Title: Predicting and Analyzing Greenhouse Gas Emmissions
+## Summary and Recommendations for the Dashboard
+### Workflow: 
+The cleaned data from the database is used to create visualizations. The dashboard is an interactive  web application which showcases seamless integration of Tableau and Plotly visuals.
 
-## Project Overview
-The damage caused by climate change over this past year was at times so immense it was hard to comprehend. In Pakistan alone, extreme summer flooding killed thousands, displaced millions and caused over $40 billion in losses. Fall floods in Nigeria killed hundreds and displaced over 1 million people. Droughts in Europe, China and the U.S. dried out once-unstoppable rivers and slowed the flows of commerce on major arteries like the Mississippi and the Rhine.
+#### Tableau
+- After bringing in our CSV files, we chose various forms of graphs and maps to show the relationship between CO2 emissions and various factors such as GDP per capita, population growth, fossil usage, etc. 
+- We also used various forms of filtering (by Year, Top 10 countries etc) to allow for a more comprehensive study of the charts provided. 
+- We used the Actions option in Tableau Dashboard, to include interactive selection and filtering elements to our visualization.
+- Through our dashboard, we will be able to dive into some visualizations to help our investors grasp the concepts of Green House Gas emissions and their effects on the environment. 
 
-As 2022 unfolded, a clear pathway of climate hope emerged. New policy breakthroughs have the potential to unlock enormous progress in the effort to slow and reverse warming temperatures. Encouraging developments from a very momentous year, as nation after nation elected more climate-oriented governments and enacted new efforts to curb greenhouse gas. in August the Biden administration and a narrow Democratic majority in Congress managed to pass the Inflation Reduction Act. 
+#### Plotly:
+- HTML, CSS and Bootstrap are extensively used to build the layout of the dashboard page. 
+- The dashboard also houses plots built with Python's Plotly.
+- The Tableau visualizations are embedded into the web page using Tableau Embedding API. 
 
-This new U.S. law, backed by some $374 billion in climate spending, is the country's most aggressive piece of climate legislation ever. Its provisions ensure that for decades to come billions of dollars will roll toward the energy transition, making it easier to deploy renewable energy, build out green technologies and subsidize consumer adoption of everything from electric cars to heat pumps. Experts on energy modeling predict the law will eliminate 4 billion tons of greenhouse gas emissions.
+#### Analysis 
+At first glance, we can see that TX is the largest CO2 emitter in the country, followed by LA. 
+When we click on the TX bar in the bar graph, we can see how these emissions are spread out over the various sectors. Chemicals sector is the highest contributor.  
+As the first step to our analysis, we can assume that Texas and Louisiana are high on our priority list of states needing assistance in cutting down their CO2 emissions, especially in the Chemicals sector.
 
-For our project, we have an investor that would like to tap into the climate spending but doesn't know what sector or location to start. We will be utilizing the Climate Change Data from the World Bank for our database. It is data from World Development Indicators and Climate Change Knowledge Portal on climate systems, exposure to climate impacts, resilience, greenhouse gas emissions, and energy use. We will be using a machine learning model for predicting CO2 greenhouse gas emissions from economic growth indicatiors like Gross Domestic Product (GDP), population, and energy use per capita. We will be analyzing greenhouse gas emissions by the following:
-- Per capita: how much CO2 does the average person emit?
-- What are the countries’ annual CO2 emissions?
-- Year-on-year change: what is the percentage change in CO2 emissions?
-- Cumulative: how much CO2 has it produced to date?
-- What share of global CO2 emissions are emitted by the country?
-- Total greenhouse gas emissions: how much does the average person emit? Where do emissions come from? 
-- Does energy used to sustain a person in a country have an effect on CO2 emissions? 
-- How does GDP influence Co2 emissions? 
-- How does Urban population in a country affect CO2 emissions?
+We may need to look into the companies that emit the highest amounts of CO2 and see if they would be a good match for this investment goal.
 
-## Communication protocols
-We are utilizing our Slack group project channel to relay information to each other. We have divided the project by presentation, GitHub, Machine Learning Model, Database and Dashboard. We created branches for each deliverable and will use that branch for our portion of the project. When we are ready for pull requests to be approved, we will indicate via Slack that we are ready for the person in charge of Github to act accordingly. We are meeting 3 times a week to collaborate and ensure we are answering each others' questions. 
+#### Future improvements: 
 
-## Project Outline
-- <b>Presentation: </b>
-  - Content 
-    - Selected topic
-    - Reason why they selected their topic
-    - Description of their source of data
-    - Questions they hope to answer with the data
-    - Description of the data exploration phase of the project
-    - Description of the analysis phase of the project
-    - Technologies, languages, tools, and algorithms used throughout the project 
-    - Result of analysis
-    - Recommendation for future analysis
-    - Anything the team would have done differently
-  - Google Slides: 
-    - Presentations are finalized in Google Slides
-  - Live Presentation
-    - All team members present in equal proportions 
-    - The team demonstrates interactivity of dashboard in real time 
-    - The presentation falls within any time limits provided by instructor 
-    - Submission includes speaker notes, flashcards, or a video of the presentation rehearsal
-- <b>Github:</b>
-  - Main Branch
-    - All code necessary to perform exploratory analysis
-    - All code necessary to complete machine learning portion of project 
-    - Any images that have been created (at least three)
-    - Requirements.txt file
-  - README.md
-    - Cohesive, structured outline of the project (this may include images, but should be easy to follow and digest)
-    - Link to dashboard (or link to video of dashboard demo)
-    - Link to Google Slides presentation
-  - Individual Branches
-    - At least one branch for each team member
-    - Each team member has at least four commits for the duration of the final segment (16 total commits per person)
-- <b>Machine Learning Model: Working code or their machine learning model</b>
-  - Description of data preprocessing 
-  - Description of feature engineering and the feature selection, including the team's decision-making process 
-  - Description of how data was split into training and testing sets
-  - Explanation of model choice, including limitations and benefits
-  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-  - Description of how model was trained (or retrained, if they are using an existing model)
-  - Description and explanation of model’s confusion matrix, including final accuracy score 
-- <b>Database: Present a final project with a fully integrated database</b>
-  - Database stores static data for use during the project
-  - Database interfaces with the project in some format (e.g., scraping updates the database, or database connects to the model)
-  - Includes at least two tables (or collections, if using MongoDB)
-  - Includes at least one join using the database language (not including any joins in Pandas) 
-  - Includes at least one connection string (using SQLAlchemy or PyMongo)
-- <b>Dashboard: </b>
-  - Images from the initial analysis
-  - Data (images or report) from the machine learning task
-  - At least one interactive element
-
-## Resources
-- Data Source: <a href="https://datacatalog.worldbank.org/search/dataset/0040205">Climate Change Data | Data Catalog</a>
-- Software: Jupyter Notebook 6.4.8, Python 3.7.13, Tableau Public 2022.3.0
-- Library: WBGAPI
-- Overview Source: <a href="https://www.stltoday.com/news/world/six-climate-breakthroughs-that-made-2022-a-step-toward-net-zero/article_b87f90e9-0945-56e9-ba52-0e1c053198eb.html"> Six climate breakthroughs that made 2022 a step toward net zero</a> by Leslie Kaufman and Laura Millan Lombrana and <a href="https://ourworldindata.org/co2/country/united-states?country=USA~CHN~JPN~DEU">United States: CO2 Country Profile</a> by Hannah Ritchie and Max Roser
-
-##  Results
-### Data Collection  
-We used a python library(wbgapi) that fetches World Bank Data directly into the dataframe using API. 
-
-### Data Cleaning and Analysis
-Pandas is used to clean the data and perform an exploratory analysis.
-
-### Database Storage
-Postgres(SQL) is the database we intend to use, and the structure of the database is designed using the QuickDBD tool. We will eventually run the database in AWS.
-
-The ERD diagram is shown below,
-![](images/api_data_ERD.png?raw=true)
-
-* Database stores static data for use during the project.
-![](images/ghg_emissions_sample_data.png?raw=true)
-
-* Database interfaces with the project in some format (database connects to the model)
-![](images/MLconnected_db.png?raw=true)
-
-### Data Extraction:
-
-- Datasets from [Climate TRACE](https://climatetrace.org/) are downloaded. After exploring the data, this dataset is not considered due to lack of dependent features that can address the project's outcome.
-- Later, World Bank climate change data is downloaded to train the model. Though, there are several ways to retrieve the dataset, Python's wbgapi API is used due to the ease of data retrieval and availability of current data.
-
-### Data Cleaning
-
-- Basic cleaning is done on the dataset to remove empty values.
-- The data is then loaded into a local PostGres database.
-
-### Emissions Model Creation:
-
-- The data retrieved from the local PostGres database is considered as initial data set for the model. The dataset has 3552 rows and 19 columns.
-<img src="images/emissions_df.png" width="300"/>
-
-- With 19 columns to explore, the variables involved are classified as dependent and independent variables.
-- Dependent Variables
-  - emissions_total
-  - emissions_per_capita
-  - emissions_per_gdp
-- Variables to drop: year, country_name, country_code
-- The rest are considered as independent variables.
-
-### Exploratory Data Analysis
-
-- Since there are multiple independent variables that may predict emissions, a **Correlation** matrix is generated to reduce and interpret data.
-- **CO<sub>2</sub> emissions_per_capita is considered target variable** as this is correlated to several predicting variables.
-- A correlation value of 0.5 is set as threshold to select the features: Energy use per capita, GDP per capita, GNI per capita, Urban Population %, Electricity Access %, Cereal Yield 
-- Later, each selected feature is visualized with the target variable. CO<sub>2</sub> emissions per capita shows a strong linear dependency to Energy use per capita and non-linear relationships with rest of the features.
-- Since majority of features exhibit non-linear relationship with target variable, Machine Learning algorithms that can handle non-linearities are chosen.
-
-- How are you training your model?
-- What is the model's accuracy?
-- How does this model work?
-
-## *Pending* Link to the Dashboard
-[link to Tableau dashboard] <a href="">link to dashboard</a>
-
-## *Pending* Link to the Presentation
-[link to Google Slides Presentation] <a href="">link to presentation</a>
-
-## *Pending* Summary and Recommendation
+- In-depth analysis of GDP per capita, population and energy use in the United States and how CO2 emissions are affected.
+- Inclusion of other Green House Gases such as methane, nitrous oxide and flouride. 
